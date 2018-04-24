@@ -60,7 +60,9 @@ namespace ASE_to_Unity {
         /// <summary>  </summary>
         private float scale = 1;
 
-        private float MasterScrollPosition = 0;
+        private int iconSize = 26;
+
+        private Vector2 MasterScrollPosition;
 
         public enum ImportType {
             DebuggingOutput, ApplyingToExistingObject, CreatingNewObject
@@ -92,7 +94,24 @@ namespace ASE_to_Unity {
         void OnGUI() {
             MasterScrollPosition = GUILayout.BeginScrollView(MasterScrollPosition, GUI.skin.scrollView);
 
-            
+            HeaderGUI();
+            ExtractGUI();
+            ImportGUI();
+
+            GUILayout.EndScrollView();
+        }
+
+        void HeaderGUI() {
+
+        }
+
+        void ExtractGUI() {
+            if (extractFoldout = AseFoldout.BeginFold(extractFoldout, "Ase Extraction Settings")) {
+                
+            }
+        }
+
+        void ImportGUI() {
             if (Directory.Exists(artFolder) && File.Exists(asepriteLoc + "aseprite.exe")) {
                 if (importFoldout = AseFoldout.BeginFold(importFoldout, "Import Aseprite Animations")) {
                     #region import
@@ -112,7 +131,7 @@ namespace ASE_to_Unity {
                         }
                     }
                     if (importPreference == ImportType.ApplyingToExistingObject) {
-                        go = EditorGUILayout.ObjectField("Gameobject", go, 
+                        go = EditorGUILayout.ObjectField("Gameobject", go,
                             typeof(GameObject), true) as GameObject;
                     }
                     if (importPreference == ImportType.CreatingNewObject) {
