@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.IO;
-using LitJson;
 using UnityEditor.Animations;
 using System.Reflection;
 
@@ -63,7 +62,7 @@ namespace ASE_to_Unity {
         /// <summary> foldout state for Import related GUI stuff </summary>
         private bool importFoldout = true;
         /// <summary> foldout state for Help related GUI stuff </summary>
-        private bool helpFoldout = true;
+        private bool helpFoldout = false;
         /// <summary> text dump of imported animation data </summary>
         private string text = "hiya :3 i jus 8 a pair it was gud";
         /// <summary> the category of the current sprite that is being updated </summary>
@@ -187,7 +186,7 @@ namespace ASE_to_Unity {
             EditorGUI.DropShadowLabel(rect, MAIN_TITLE, shadowStyle);
             GUI.Label(rect, MAIN_TITLE, style);
 
-            GUILayout.Space(40);
+            GUILayout.Space(20);
         }
 
         /// <summary>
@@ -224,7 +223,8 @@ namespace ASE_to_Unity {
                         asepriteExeLoc = temp;
                 }
                 GUILayout.EndHorizontal();
-                
+                GUILayout.Space(5);
+
                 if (File.Exists(asepriteExeLoc + "aseprite.exe")) {
                     GUILayout.BeginHorizontal();
                     string newArtFolder = EditorGUILayout.TextField("Source Folder", artFolder,
@@ -240,6 +240,7 @@ namespace ASE_to_Unity {
                         FindAseFiles();
                     }
                     GUILayout.EndHorizontal();
+                    GUILayout.Space(5);
 
                     if (Directory.Exists(artFolder)) {
                         GUILayout.BeginHorizontal();
@@ -258,6 +259,7 @@ namespace ASE_to_Unity {
                                 rootSpritesLoc += "/";
                         }
                         GUILayout.EndHorizontal();
+                        GUILayout.Space(5);
 
                         // add subfolder organization
                         spritesLoc = rootSpritesLoc + (OrganizeAssets ? 
@@ -283,24 +285,33 @@ namespace ASE_to_Unity {
 
                         GUILayout.Space(20);
 
-                        GUILayout.BeginHorizontal();
-                        EditorGUILayout.LabelField("Aseprite File");
-                        index = EditorGUILayout.Popup(index, options);
-                        GUILayout.EndHorizontal();
+                        if (files.Count() == 0) {
+                                EditorGUI.HelpBox(AseGUILayout.GUIRect(0, iconSize),
+                                 "No .ase files found in Source Folder.",
+                                 MessageType.Info);
+                        } else {
+                            GUILayout.BeginHorizontal();
+                            EditorGUILayout.LabelField("Aseprite File");
+                            index = EditorGUILayout.Popup(index, options);
+                            GUILayout.EndHorizontal();
 
-                        EditorGUI.HelpBox(AseGUILayout.GUIRect(0, iconSize),
-                            files[index], MessageType.None);
+                            AseGUILayout.BeginArea();
+                            GUILayout.Space(2);
+                            EditorGUILayout.LabelField(files[index], EditorStyles.centeredGreyMiniLabel);
+                            GUILayout.Space(2);
+                            AseGUILayout.EndArea();
 
-                        // extract data from ase file
-                        EditorGUILayout.BeginHorizontal();
-                        GUILayout.FlexibleSpace();
-                        string btnText = HasExtractedJSON() ? "Update .ase Interpretation" :
-                            "Extract .ase Interpretation";
-                        if (GUILayout.Button(btnText, 
-                            GUILayout.Height(35), GUILayout.MaxWidth(200)))
-                            ExtractAse(options[index]);
-                        GUILayout.FlexibleSpace();
-                        EditorGUILayout.EndHorizontal();
+                            // extract data from ase file
+                            EditorGUILayout.BeginHorizontal();
+                            GUILayout.FlexibleSpace();
+                            string btnText = HasExtractedJSON() ? "Update .ase Interpretation" :
+                                "Extract .ase Interpretation";
+                            if (GUILayout.Button(btnText, 
+                                GUILayout.Height(35), GUILayout.MaxWidth(200)))
+                                ExtractAse(options[index]);
+                            GUILayout.FlexibleSpace();
+                            EditorGUILayout.EndHorizontal();
+                        }
                     } else {
                         //GUI.DrawTexture(AseGUILayout.GUIRect(iconSize, iconSize), DirFileIcon);
                         EditorGUI.HelpBox(AseGUILayout.GUIRect(0, iconSize),
@@ -316,8 +327,8 @@ namespace ASE_to_Unity {
 
         void ImportGUI() {
             if (Directory.Exists(artFolder) && File.Exists(asepriteExeLoc + "aseprite.exe")) {
-                if (importFoldout = AseGUILayout.BeginFold(importFoldout, "Import Aseprite Animations")) {
-                    #region import
+                if (importFoldout = AseGUILayout.BeginFold(importFoldout, "Import Aseprite Animations")
+                    && files.Count() > 0) {
                     importPreference = (ImportType)EditorGUILayout.EnumPopup("Import By:", importPreference);
 
                     EditorGUILayout.BeginHorizontal();
@@ -361,8 +372,6 @@ namespace ASE_to_Unity {
                     GUILayout.FlexibleSpace();
                     EditorGUILayout.EndHorizontal();
 
-                    #endregion
-
                     #region dat display
                     if (animDat != null && displayDebugData) {
                         EditorGUILayout.BeginToggleGroup("Anim Data", animDat != null);
@@ -378,6 +387,8 @@ namespace ASE_to_Unity {
         }
         #endregion
 
+
+        #region ---- IMPORT ----
         /// <summary>
         /// imports the sprites of a given animation into each AnimationClip with appropiate frame rates
         /// </summary>
@@ -612,21 +623,6 @@ namespace ASE_to_Unity {
         }
 
         /// <summary>
-        /// determine whether or not spritesheet has yet been created, and if
-        /// it is possible to use the sprites
-        /// </summary>
-        /// <returns></returns>
-        bool IsAbleToImportAnims() {
-            string aseName = options[index];
-            return File.Exists(spritesLoc + aseName + ".png");
-        }
-
-        bool HasExtractedJSON() {
-            string aseName = options[index];
-            return File.Exists(artFolder + extractLoc + aseName + ".json");
-        }
-
-        /// <summary>
         /// Extract an optimed spritesheet from the ASE file
         /// </summary>
         /// <param name="asePath"></param>
@@ -660,6 +656,24 @@ namespace ASE_to_Unity {
 
         private void ExtractSpriteSheetMac(string asePath) {
 
+        }
+        #endregion
+
+        /// <summary>
+        /// determine whether or not spritesheet has yet been created, and if
+        /// it is possible to use the sprites
+        /// </summary>
+        /// <returns></returns>
+        bool IsAbleToImportAnims() {
+            if (options.Count() == 0) return false;
+            string aseName = options[index];
+            return File.Exists(spritesLoc + aseName + ".png");
+        }
+
+        bool HasExtractedJSON() {
+            if (options.Count() == 0) return false;
+            string aseName = options[index];
+            return File.Exists(artFolder + extractLoc + aseName + ".json");
         }
 
         static T CopyComponent<T>(T original, GameObject destination) where T : Component {

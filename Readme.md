@@ -4,6 +4,7 @@ It's actually pretty simple to use. First, make sure your artists have followed 
 This includes: 
 
 	- saving all animations loops for the same object in .ase file
+	- all direction-dependent sprites (left/right) are facing the same direction
 	- animation loops have names that accurately reflect their purpose in-game
 	- all .ase files can be found under a single folder
 	- hiding layers that should not be visible in the final sprite
