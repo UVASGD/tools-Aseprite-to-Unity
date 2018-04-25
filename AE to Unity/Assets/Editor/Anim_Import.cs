@@ -12,20 +12,26 @@ using System.Reflection;
 namespace ASE_to_Unity {
     public class Anim_Import : EditorWindow {
 
+        #region ---- FIELDS ----
 
+        /// <summary>  </summary>
         public AseData animDat;
-        [Tooltip("Location of Aseprite on hard disk")]
         /// <summary> location of Aseprite on hard disk </summary>
-        public string asepriteLoc;
-        [Tooltip("Location of art stuff")]
+        public string asepriteExeLoc;
+        /// <summary> location of source ASE and JSON files </summary>
         public static string artFolder = "";
-        [Tooltip("Location of Sprites")]
+        /// <summary> location to output </summary>
         public static string spritesLoc = "";
+        /// <summary>  </summary>
         public static string rootSpritesLoc="";
 
+        /// <summary> title for the application to be displayed as window header </summary>
         private static string MAIN_TITLE = "Aseprite to Unity";
+        /// <summary> default Location of aseprite.exe </summary>
         private static string DEFAULT_WINDOWS_ASEPRITE_INSTALL_PATH = "C:/Program Files (x86)/Aseprite/";
+        /// <summary>  </summary>
         private static string DEFAULT_MAC_ASEPRITE_INSTALL_PATH = "";
+        /// <summary>  </summary>
         private static string DEFAULT_LINUX_ASEPRITE_INSTALL_PATH = "";
 
         private string DEFAULT_SPRITES_PATH = "";
@@ -56,26 +62,37 @@ namespace ASE_to_Unity {
         private bool extractFoldout = true;
         /// <summary> foldout state for Import related GUI stuff </summary>
         private bool importFoldout = true;
+        /// <summary> foldout state for Help related GUI stuff </summary>
         private bool helpFoldout = true;
         /// <summary> text dump of imported animation data </summary>
         private string text = "hiya :3 i jus 8 a pair it was gud";
-        /// <summary>  </summary>
-        private ObjectType objType = ObjectType.Character;
-        /// <summary>  </summary>
+        /// <summary> the category of the current sprite that is being updated </summary>
+        private SpriteCategory category = SpriteCategory.Character;
+        /// <summary> whether or not to store Sprites and Animations into
+        /// categorized subfolders. Best used with a large amount of sprites </summary>
         private bool OrganizeAssets = true;
+        /// <summary> whether or not to output debug information </summary>
         private bool displayDebugData = false;
-        /// <summary>  </summary>
+        /// <summary> scale at which to create new gameobject. Putting this at 1 means object 
+        /// will be native pixel size </summary>
         private float scale = 1;
-
-        private int iconSize = 26;
-
+        /// <summary> pixel size of helpBox icon </summary>
+        private int iconSize = 40;
+        /// <summary> Master control for window scrolling </summary>
         private Vector2 MasterScrollPosition;
+        /// <summary>  </summary>
 
+        #endregion
+
+        /// <summary> How the Animations should be imported </summary>
         public enum ImportType {
             DebuggingOutput, ApplyingToExistingObject, CreatingNewObject
         }
 
-        public enum ObjectType {
+
+        /// <summary> Different Categories sprites can be imported as;
+        /// Used for file organization</summary>
+        public enum SpriteCategory {
             Character, Environment, ParticleEffect, Other
         }
 
@@ -83,6 +100,8 @@ namespace ASE_to_Unity {
         private static void AnimImport() {
             EditorWindow.GetWindow(typeof(Anim_Import)).name = "AE to Unity";
         }
+
+        #region ---- INIT ----
 
         /// <summary>
         /// locates the art folder by assuming it is found in the same directory as the Unity project by the name "Art"
@@ -94,224 +113,14 @@ namespace ASE_to_Unity {
             artFolder = s.Substring(0, s.LastIndexOf(key)) + key + "Art" + key;
             FindAseFiles();
 
-            DEFAULT_SPRITES_PATH = Application.dataPath + "/Resources/Sprites";
+            DEFAULT_SPRITES_PATH = Application.dataPath + "/Resources/Sprites/";
             rootSpritesLoc = DEFAULT_SPRITES_PATH + "";
             spritesLoc = DEFAULT_SPRITES_PATH + "";
 
             DetectPlatform();
-            asepriteLoc = isWindows ? DEFAULT_WINDOWS_ASEPRITE_INSTALL_PATH :
+            asepriteExeLoc = isWindows ? DEFAULT_WINDOWS_ASEPRITE_INSTALL_PATH :
                 DEFAULT_MAC_ASEPRITE_INSTALL_PATH;
         }
-
-        # region ---- GUI ----
-
-        void OnGUI() {
-            MasterScrollPosition = GUILayout.BeginScrollView(MasterScrollPosition, GUI.skin.scrollView);
-
-            HeaderGUI();
-            HelpGUI();
-            ExtractGUI();
-            ImportGUI();
-
-            GUILayout.EndScrollView();
-        }
-
-        /// <summary>
-        /// GUI for our beautiful header :)
-        /// </summary>
-        void HeaderGUI() {
-            GUILayout.Space(16);
-
-            GUIStyle style = new GUIStyle() {
-                alignment = TextAnchor.LowerCenter,
-                fontSize = 18,
-                fontStyle = FontStyle.Bold
-            };
-            style.normal.textColor = Color.white;
-            style.richText = true;
-            Rect rect = GUIRect(0, 18);
-
-            GUIStyle shadowStyle = new GUIStyle(style) {
-                richText = false
-            };
-
-            EditorGUI.DropShadowLabel(rect, MAIN_TITLE, shadowStyle);
-            GUI.Label(rect, MAIN_TITLE, style);
-
-            GUILayout.Space(10);
-        }
-
-        /// <summary>
-        /// GUI for telling the user How To use ASE to Unity
-        /// </summary>
-        void HelpGUI() {
-            if (helpFoldout = AseFoldout.BeginFold(helpFoldout, "How To Use")) {
-
-            }
-            AseFoldout.EndFold();
-        }
-
-        /// <summary>
-        /// GUI for Extraction Settings Foldout. Manages control paths
-        /// </summary>
-        void ExtractGUI() {
-            if (extractFoldout = AseFoldout.BeginFold(extractFoldout, "Ase Extraction Settings")) {
-                GUILayout.BeginHorizontal();
-                asepriteLoc = EditorGUILayout.TextField("Aseprite.exe Location", asepriteLoc,
-                    GUILayout.Width(-50), GUILayout.ExpandWidth(true));
-                if (GUILayout.Button("...", GUILayout.Width(35))) {
-                    string temp = EditorUtility.OpenFolderPanel("Aseprite Install Location", asepriteLoc,
-                        (isWindows ? DEFAULT_WINDOWS_ASEPRITE_INSTALL_PATH : DEFAULT_MAC_ASEPRITE_INSTALL_PATH));
-                    if (!String.IsNullOrEmpty(temp))
-                        asepriteLoc = temp;
-                }
-                GUILayout.EndHorizontal();
-
-
-                if (File.Exists(asepriteLoc + "aseprite.exe")) {
-                    GUILayout.BeginHorizontal();
-                    string newArtFolder = EditorGUILayout.TextField("Source Folder", artFolder,
-                        GUILayout.Width(-50), GUILayout.ExpandWidth(true));
-                    if(GUILayout.Button("...", GUILayout.Width(35))){
-                        string temp = EditorUtility.OpenFolderPanel("Source Folder Location", newArtFolder,
-                            Application.dataPath);
-                        if (!String.IsNullOrEmpty(temp))
-                            newArtFolder = temp;
-                    }
-                    if (!newArtFolder.Equals(artFolder)) {
-                        artFolder = newArtFolder;
-                        FindAseFiles();
-                    }
-                    GUILayout.EndHorizontal();
-
-                    if (Directory.Exists(artFolder)) {
-                        GUILayout.BeginHorizontal();
-                        // In textbox, the path to the sprites folder 
-                        // should be represented as a local path
-                        string shortSprite = rootSpritesLoc.Replace(Application.dataPath + "/", "");
-                        shortSprite = EditorGUILayout.TextField("Root Sprites Folder", shortSprite,
-                            GUILayout.Width(-50), GUILayout.ExpandWidth(true));
-                        rootSpritesLoc = Application.dataPath + "/" + shortSprite;
-                        if (GUILayout.Button("...", GUILayout.Width(35))) {
-                            string temp = EditorUtility.OpenFolderPanel("Root Sprites Folder", 
-                                rootSpritesLoc, "");
-                            if (!String.IsNullOrEmpty(temp))
-                                rootSpritesLoc = temp;
-                        }
-                        GUILayout.EndHorizontal();
-
-                        // add subfolder organization
-                        spritesLoc = rootSpritesLoc + (OrganizeAssets ? 
-                            objType.ToString() + "/" : "");
-
-                        // validate root sprite location
-                        if(!rootSpritesLoc.Contains("Assets/"))
-                            EditorGUI.HelpBox(GUIRect(0, iconSize + 14),
-                             "Sprites Folder must be located within project Assets!", 
-                             MessageType.Error);
-                        else if (!rootSpritesLoc.Contains("Resources/"))
-                            EditorGUI.HelpBox(GUIRect(0, iconSize + 14),
-                             "This program uses Unity's Resource Mangaer, so the " +
-                             "Sprites Folder must be subfolder in Resources",
-                             MessageType.Error);
-
-                        GUILayout.BeginHorizontal();
-                        EditorGUILayout.LabelField("Aseprite File");
-                        index = EditorGUILayout.Popup(index, options);
-                        GUILayout.EndHorizontal();
-
-
-                        // extract data from ase file
-                        EditorGUILayout.BeginHorizontal();
-                        GUILayout.FlexibleSpace();
-                        if (GUILayout.Button("Update .ase Interpretation", 
-                            GUILayout.Height(35), GUILayout.MaxWidth(200)))
-                            ExtractAse(options[index]);
-                        GUILayout.FlexibleSpace();
-                        EditorGUILayout.EndHorizontal();
-                    } else {
-                        //GUI.DrawTexture(GUIRect(iconSize, iconSize), DirFileIcon);
-                        EditorGUI.HelpBox(GUIRect(0, iconSize + 14),
-                            "Cannot find specified art folder.", MessageType.Error);
-                    }
-                } else {
-                    EditorGUI.HelpBox(GUIRect(0, iconSize + 14),
-                        "Could not find aseprite.exe at \"" + asepriteLoc + "\".", 
-                        MessageType.Error);
-                }
-            } AseFoldout.EndFold();
-        }
-
-        private Rect GUIRect(float width, float height) {
-            return GUILayoutUtility.GetRect(width, height, 
-                GUILayout.ExpandWidth(width <= 0), 
-                GUILayout.ExpandHeight(height <= 0));
-        }
-
-        void ImportGUI() {
-            if (Directory.Exists(artFolder) && File.Exists(asepriteLoc + "aseprite.exe")) {
-                if (importFoldout = AseFoldout.BeginFold(importFoldout, "Import Aseprite Animations")) {
-                    #region import
-                    importPreference = (ImportType)EditorGUILayout.EnumPopup("Import By:", importPreference);
-
-                    EditorGUILayout.BeginHorizontal();
-                    displayDebugData = EditorGUILayout.Toggle("Display Debug Data", displayDebugData);
-                    if (displayDebugData)
-                        showFrameData = EditorGUILayout.Toggle("Show Frame Data ", showFrameData);
-                    EditorGUILayout.EndHorizontal();
-
-                    if (importPreference != ImportType.DebuggingOutput) {
-                        update = EditorGUILayout.Toggle("Update Existing Clips", update);
-                        if (update) {
-                            EditorGUI.HelpBox(GUIRect(0, iconSize + 14),
-                             "If the names of the clips don't match the loop names " +
-                                "from the .ase file, a new one will be created instead",
-                             MessageType.Warning);
-                        }
-                    }
-                    if (importPreference == ImportType.ApplyingToExistingObject) {
-                        go = EditorGUILayout.ObjectField("Gameobject", go,
-                            typeof(GameObject), true) as GameObject;
-                    }
-                    if (importPreference == ImportType.CreatingNewObject) {
-                        scale = EditorGUILayout.FloatField("Automatic Scaling", scale);
-                        referenceObject = EditorGUILayout.ObjectField("Reference Game Object",
-                            referenceObject, typeof(GameObject), true) as GameObject;
-                    } else referenceObject = null;
-
-                    AseArea.Begin();
-                    //EditorGUILayout.BeginHorizontal();
-                    OrganizeAssets = EditorGUILayout.BeginToggleGroup("Organize Assets", OrganizeAssets);
-                    objType = (ObjectType)EditorGUILayout.EnumPopup("Import Subfolder:", objType);
-                    EditorGUILayout.EndToggleGroup();
-                    //EditorGUILayout.EndHorizontal();
-
-                    EditorGUILayout.BeginHorizontal();
-                    GUILayout.FlexibleSpace();
-                    string btnText = (IsAbleToImportAnims()) ? "Import Animation Data" :
-                        "Create Sprite Sheet";
-
-                    if (GUILayout.Button(btnText, GUILayout.Height(35), GUILayout.MaxWidth(200)))
-                        ImportAnims();
-                    GUILayout.FlexibleSpace();
-                    EditorGUILayout.EndHorizontal();
-
-                    #endregion
-
-                    #region dat display
-                    if (animDat != null && displayDebugData) {
-                        EditorGUILayout.BeginToggleGroup("Anim Data", animDat != null);
-                        scroll = EditorGUILayout.BeginScrollView(scroll);
-                        text = EditorGUILayout.TextArea(text);
-                        EditorGUILayout.EndScrollView();
-                    }
-                    AseArea.End();
-                    #endregion
-                }
-                AseFoldout.EndFold();
-            }
-        }
-        #endregion
 
         /// <summary>
         /// update list of ase file locations
@@ -337,6 +146,225 @@ namespace ASE_to_Unity {
             res.AddRange(Directory.GetFiles(artFolder, "*.ase"));
             return res;
         }
+
+        #endregion
+
+
+        #region ---- GUI ----
+
+        void OnGUI() {
+            MasterScrollPosition = GUILayout.BeginScrollView(MasterScrollPosition, GUI.skin.scrollView);
+
+            UnityEngine.Debug.Log(spritesLoc);
+
+            HeaderGUI();
+            HelpGUI();
+            ExtractGUI();
+            ImportGUI();
+
+            GUILayout.EndScrollView();
+        }
+
+        /// <summary>
+        /// GUI for our beautiful header :)
+        /// </summary>
+        void HeaderGUI() {
+            GUILayout.Space(16);
+
+            GUIStyle style = new GUIStyle() {
+                alignment = TextAnchor.LowerCenter,
+                fontSize = 18,
+                fontStyle = FontStyle.Bold
+            };
+            style.normal.textColor = Color.white;
+            style.richText = true;
+            Rect rect = AseGUILayout.GUIRect(0, 18);
+
+            GUIStyle shadowStyle = new GUIStyle(style) {
+                richText = false
+            };
+
+            EditorGUI.DropShadowLabel(rect, MAIN_TITLE, shadowStyle);
+            GUI.Label(rect, MAIN_TITLE, style);
+
+            GUILayout.Space(40);
+        }
+
+        /// <summary>
+        /// GUI for telling the user How To use ASE to Unity
+        /// </summary>
+        void HelpGUI() {
+            if (helpFoldout = AseGUILayout.BeginFold(helpFoldout, "How To Use")) {
+
+            }
+            AseGUILayout.EndFold();
+        }
+
+        /// <summary>
+        /// GUI for Extraction Settings Foldout. Manages control paths
+        /// </summary>
+        void ExtractGUI() {
+            if (extractFoldout = AseGUILayout.BeginFold(extractFoldout, "Ase Extraction Settings")) {
+                GUILayout.BeginHorizontal();
+                asepriteExeLoc = EditorGUILayout.TextField("Aseprite.exe Location", asepriteExeLoc,
+                    GUILayout.Width(-50), GUILayout.ExpandWidth(true));
+                if (GUI.Button(AseGUILayout.GUIRect(30, 18), "...", EditorStyles.miniButtonMid)) {
+                    string temp = EditorUtility.OpenFolderPanel("Aseprite Install Location", asepriteExeLoc,
+                        //(isWindows ? DEFAULT_WINDOWS_ASEPRITE_INSTALL_PATH : DEFAULT_MAC_ASEPRITE_INSTALL_PATH));
+                        "");
+                    if (!String.IsNullOrEmpty(temp))
+                        asepriteExeLoc = temp;
+                }
+                GUILayout.EndHorizontal();
+                
+                if (File.Exists(asepriteExeLoc + "aseprite.exe")) {
+                    GUILayout.BeginHorizontal();
+                    string newArtFolder = EditorGUILayout.TextField("Source Folder", artFolder,
+                        GUILayout.Width(-50), GUILayout.ExpandWidth(true));
+                    if(GUI.Button(AseGUILayout.GUIRect(30, 18), "...", EditorStyles.miniButtonMid)) {
+                        string temp = EditorUtility.OpenFolderPanel("Source Folder Location", newArtFolder, "");
+                        if (!String.IsNullOrEmpty(temp))
+                            newArtFolder = temp;
+                        if (!newArtFolder.EndsWith("/")) newArtFolder += "/";
+                    }
+                    if (!newArtFolder.Equals(artFolder)) {
+                        artFolder = newArtFolder;
+                        FindAseFiles();
+                    }
+                    GUILayout.EndHorizontal();
+
+                    if (Directory.Exists(artFolder)) {
+                        GUILayout.BeginHorizontal();
+                        // In textbox, the path to the sprites folder 
+                        // should be represented as a local path
+                        string shortSprite = rootSpritesLoc.Replace(Application.dataPath + "/", "");
+                        shortSprite = EditorGUILayout.TextField("Root Sprites Folder", shortSprite,
+                            GUILayout.Width(-50), GUILayout.ExpandWidth(true));
+                        rootSpritesLoc = Application.dataPath + "/" + shortSprite;
+                        if (GUI.Button(AseGUILayout.GUIRect(30, 18), "...", EditorStyles.miniButtonMid)) {
+                            string temp = EditorUtility.OpenFolderPanel("Root Sprites Folder", 
+                                rootSpritesLoc, "");
+                            if (!String.IsNullOrEmpty(temp))
+                                rootSpritesLoc = temp;
+                            if (!rootSpritesLoc.EndsWith("/"))
+                                rootSpritesLoc += "/";
+                        }
+                        GUILayout.EndHorizontal();
+
+                        // add subfolder organization
+                        spritesLoc = rootSpritesLoc + (OrganizeAssets ? 
+                            category.ToString() + "/" : "");
+                        // remove subfolder organization if it is unwanted
+                        if (!OrganizeAssets && spritesLoc.Equals(rootSpritesLoc + category.ToString() + "/"))
+                            spritesLoc = spritesLoc.Substring(0, spritesLoc.LastIndexOf(category.ToString()));
+
+                        // validate root sprite location
+                        if (!Directory.Exists(rootSpritesLoc))
+                            EditorGUI.HelpBox(AseGUILayout.GUIRect(0, iconSize),
+                             "Root Sprite Folder does not exist.",
+                             MessageType.Error);
+                        if(!rootSpritesLoc.Contains("Assets/"))
+                            EditorGUI.HelpBox(AseGUILayout.GUIRect(0, iconSize),
+                             "Sprites Folder must be located within project Assets!", 
+                             MessageType.Error);
+                        else if (!rootSpritesLoc.Contains("Resources/"))
+                            EditorGUI.HelpBox(AseGUILayout.GUIRect(0, iconSize),
+                             "This program uses Unity's Resource Mangaer, so the " +
+                             "Sprites Folder must be subfolder in Resources",
+                             MessageType.Error);
+
+                        GUILayout.BeginHorizontal();
+                        EditorGUILayout.LabelField("Aseprite File");
+                        index = EditorGUILayout.Popup(index, options, GUILayout.Height(35));
+                        GUILayout.EndHorizontal();
+
+                        EditorGUI.HelpBox(AseGUILayout.GUIRect(0, iconSize),
+                            files[index], MessageType.None);
+
+                        // extract data from ase file
+                        EditorGUILayout.BeginHorizontal();
+                        GUILayout.FlexibleSpace();
+                        if (GUILayout.Button("Update .ase Interpretation", 
+                            GUILayout.Height(35), GUILayout.MaxWidth(200)))
+                            ExtractAse(options[index]);
+                        GUILayout.FlexibleSpace();
+                        EditorGUILayout.EndHorizontal();
+                    } else {
+                        //GUI.DrawTexture(AseGUILayout.GUIRect(iconSize, iconSize), DirFileIcon);
+                        EditorGUI.HelpBox(AseGUILayout.GUIRect(0, iconSize),
+                            "Cannot find specified art folder.", MessageType.Error);
+                    }
+                } else {
+                    EditorGUI.HelpBox(AseGUILayout.GUIRect(0, iconSize),
+                        "Could not find aseprite.exe at \"" + asepriteExeLoc + "\".", 
+                        MessageType.Error);
+                }
+            } AseGUILayout.EndFold();
+        }
+
+        void ImportGUI() {
+            if (Directory.Exists(artFolder) && File.Exists(asepriteExeLoc + "aseprite.exe")) {
+                if (importFoldout = AseGUILayout.BeginFold(importFoldout, "Import Aseprite Animations")) {
+                    #region import
+                    importPreference = (ImportType)EditorGUILayout.EnumPopup("Import By:", importPreference);
+
+                    EditorGUILayout.BeginHorizontal();
+                    displayDebugData = EditorGUILayout.Toggle("Display Debug Data", displayDebugData);
+                    if (displayDebugData)
+                        showFrameData = EditorGUILayout.Toggle("Show Frame Data ", showFrameData);
+                    EditorGUILayout.EndHorizontal();
+
+                    if (importPreference != ImportType.DebuggingOutput) {
+                        update = EditorGUILayout.Toggle("Update Existing Clips", update);
+                        if (update) {
+                            EditorGUI.HelpBox(AseGUILayout.GUIRect(0, iconSize),
+                             "If the names of the clips don't match the loop names " +
+                                "from the .ase file, new clips will be created for mismatches" +
+                                "instead.",
+                             MessageType.Warning);
+                        }
+                    }
+                    if (importPreference == ImportType.ApplyingToExistingObject) {
+                        go = EditorGUILayout.ObjectField("Target Gameobject", go,
+                            typeof(GameObject), true) as GameObject;
+                    }
+                    if (importPreference == ImportType.CreatingNewObject) {
+                        scale = EditorGUILayout.FloatField("Automatic Scaling", scale);
+                        referenceObject = EditorGUILayout.ObjectField("Reference Game Object",
+                            referenceObject, typeof(GameObject), true) as GameObject;
+                    } else referenceObject = null;
+
+                    AseGUILayout.BeginArea();
+                    OrganizeAssets = EditorGUILayout.BeginToggleGroup("Organize Assets", OrganizeAssets);
+                    category = (SpriteCategory)EditorGUILayout.EnumPopup("Import Subfolder:", category);
+                    EditorGUILayout.EndToggleGroup();
+
+                    EditorGUILayout.BeginHorizontal();
+                    GUILayout.FlexibleSpace();
+                    string btnText = (IsAbleToImportAnims()) ? "Import Animation Data" :
+                        "Create Sprite Sheet";
+
+                    if (GUILayout.Button(btnText, GUILayout.Height(35), GUILayout.MaxWidth(200)))
+                        ImportAnims();
+                    GUILayout.FlexibleSpace();
+                    EditorGUILayout.EndHorizontal();
+
+                    #endregion
+
+                    #region dat display
+                    if (animDat != null && displayDebugData) {
+                        EditorGUILayout.BeginToggleGroup("Anim Data", animDat != null);
+                        scroll = EditorGUILayout.BeginScrollView(scroll);
+                        text = EditorGUILayout.TextArea(text);
+                        EditorGUILayout.EndScrollView();
+                    }
+                    AseGUILayout.EndArea();
+                    #endregion
+                }
+                AseGUILayout.EndFold();
+            }
+        }
+        #endregion
 
         /// <summary>
         /// imports the sprites of a given animation into each AnimationClip with appropiate frame rates
@@ -518,7 +546,7 @@ namespace ASE_to_Unity {
             AnimationUtility.SetObjectReferenceCurve(aC, EditorCurveBinding.
                 PPtrCurve("", typeof(SpriteRenderer), "m_Sprite"), k);
             string destination = "Assets/Resources/Animations/" +
-                (OrganizeAssets ? objType + "/" : "") + objName + "/";
+                (OrganizeAssets ? category + "/" : "") + objName + "/";
             if (!Directory.Exists(destination))
                 Directory.CreateDirectory(destination);
             AssetDatabase.CreateAsset(aC, destination + clip.name + ".anim");
@@ -548,7 +576,7 @@ namespace ASE_to_Unity {
             Process process = new Process();
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            startInfo.FileName = asepriteLoc + "aseprite.exe";
+            startInfo.FileName = asepriteExeLoc + "aseprite.exe";
             startInfo.Arguments = "-b --list-tags --ignore-empty --data \"" +
                aseJSONLoc + aseName + ".json\" \"" + asePath;
             process.StartInfo = startInfo;
@@ -597,7 +625,7 @@ namespace ASE_to_Unity {
             Process process = new Process();
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            startInfo.FileName = asepriteLoc + "aseprite.exe";
+            startInfo.FileName = asepriteExeLoc + "aseprite.exe";
             startInfo.Arguments = "-b \"" + asePath + "\" --sheet \"" + spritesLoc + aseName + ".png\" --sheet-pack";
             process.StartInfo = startInfo;
             process.Start();
