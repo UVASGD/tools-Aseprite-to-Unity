@@ -155,7 +155,7 @@ namespace ASE_to_Unity {
         void OnGUI() {
             MasterScrollPosition = GUILayout.BeginScrollView(MasterScrollPosition, GUI.skin.scrollView);
 
-            UnityEngine.Debug.Log(spritesLoc);
+            //UnityEngine.Debug.Log(spritesLoc);
 
             HeaderGUI();
             HelpGUI();
@@ -195,7 +195,15 @@ namespace ASE_to_Unity {
         /// </summary>
         void HelpGUI() {
             if (helpFoldout = AseGUILayout.BeginFold(helpFoldout, "How To Use")) {
+                GUIStyle style = new GUIStyle (GUI.skin.textArea);
+                style.normal.background = null;
+                style.active.background = null;
+                style.onHover.background = null;
+                style.hover.background = null;
+                style.onFocused.background = null;
+                style.focused.background = null;
 
+                EditorGUILayout.TextArea(helpText, style);
             }
             AseGUILayout.EndFold();
         }
@@ -273,9 +281,11 @@ namespace ASE_to_Unity {
                              "Sprites Folder must be subfolder in Resources",
                              MessageType.Error);
 
+                        GUILayout.Space(20);
+
                         GUILayout.BeginHorizontal();
                         EditorGUILayout.LabelField("Aseprite File");
-                        index = EditorGUILayout.Popup(index, options, GUILayout.Height(35));
+                        index = EditorGUILayout.Popup(index, options);
                         GUILayout.EndHorizontal();
 
                         EditorGUI.HelpBox(AseGUILayout.GUIRect(0, iconSize),
@@ -284,7 +294,9 @@ namespace ASE_to_Unity {
                         // extract data from ase file
                         EditorGUILayout.BeginHorizontal();
                         GUILayout.FlexibleSpace();
-                        if (GUILayout.Button("Update .ase Interpretation", 
+                        string btnText = HasExtractedJSON() ? "Update .ase Interpretation" :
+                            "Extract .ase Interpretation";
+                        if (GUILayout.Button(btnText, 
                             GUILayout.Height(35), GUILayout.MaxWidth(200)))
                             ExtractAse(options[index]);
                         GUILayout.FlexibleSpace();
@@ -609,6 +621,11 @@ namespace ASE_to_Unity {
             return File.Exists(spritesLoc + aseName + ".png");
         }
 
+        bool HasExtractedJSON() {
+            string aseName = options[index];
+            return File.Exists(artFolder + extractLoc + aseName + ".json");
+        }
+
         /// <summary>
         /// Extract an optimed spritesheet from the ASE file
         /// </summary>
@@ -730,6 +747,29 @@ namespace ASE_to_Unity {
         public static int GCD(int[] numbers) { return numbers.Aggregate(GCD); }
         public static int GCD(int a, int b) { return b == 0 ? a : GCD(b, a % b); }
         #endregion
+
+        /// <summary>
+        /// the text to be displayed in the help window
+        /// </summary>
+        private static string helpText = "Aseprite to Unity allows you to save time importing those awesome pixel art animations your artists have spent hours creating!\n\n" +
+            "It's actually pretty simple to use. First, make sure your artists have followed standard practices for creating their animations. This includes:\n" +
+                "\t- saving all animations loops for the same object in .ase file\n" +
+                "\t- animation loops have names that accurately reflect their purpose in-game\n" +
+                "\t- all.ase files can be found under a single folder\n" +
+                "\t- hiding layers that should not be visible in the final sprite\n" +
+                "\t- (optional) setting loop types in Aseprite for animations that do not loop\n" +
+            "\nOnce that has been verified, now you must set the extraction settings in Unity.\n\n" +
+                "\t1) Aseprite.exe - In order to run this tool, you must have Aseprite installed on the local machine. This field is set to the default installation location acording to your machine, but if you've installed it in a custom folder you must browse to it.\n" +
+                "\t2) Art Source Folder - This is where all the.ase files are stored. ASE to Unity will also create.JSON representations that will be used to fully read all animation data, as it is unable to directly parse the.ase file itself. \n" +
+                "\t3) Sprites Folder - This is where you want store all your exported sprites. Because the tool also uses Unity's Resource manager, this folder must be located within a folder called \"Resources\". This folder can be anywhere in your projcet, and the Sprites folder need not be a direct child of it.\n" +
+                "\t4) Aseprite file - This is the file you want to import! If you have set the Art Source Folder to one that contains.ase files, this will list ALL of the.ase files found, INCLUDING FILES THAT MIGHT SHARE THE SAME NAME. Please make sure you have selected the correct file!\n" +
+            
+            "\nNext, it is time to import the animations.This can only be done if the proper extraction settings have been set. Now, you might notice that you have 3 options for how to import your file.\n" +
+                "\tDebugging Output - This doesn't import any animation data, but it will output information it was able to read from the JSON\n" +
+                "\tApplying Directly to Object - This allows you to update an object that currently exists within the scene with the newly created animation data\n" +
+                "\tCreating New GameObject - This will create a new GameObject with the necessary components into the scene.It will have the same name as the selected .ase file. You can also copy components from a reference GameObject into the newly created object.\n" +
+            "\nImporting animations for the first time will create animation clips AND animation controllers specific to the.ase file. All animations will be saved under \"Resources/Animations/[ase file name]/\", for improved organization and Resource Management.If a .controller file already exists for the.ase you want to import but is not in the previously mentioned folder, a new one will be created and attached to the GameObject.\n" +
+            "\nOrganization";
     }
 
     #region Extra Classes
