@@ -117,8 +117,9 @@ namespace ASE_to_Unity {
             spritesLoc = DEFAULT_SPRITES_PATH + "";
 
             DetectPlatform();
-            asepriteExeLoc = isWindows ? DEFAULT_WINDOWS_ASEPRITE_INSTALL_PATH :
-                DEFAULT_MAC_ASEPRITE_INSTALL_PATH;
+            EditorPrefs.SetString("asepriteExeLoc", isWindows ? DEFAULT_WINDOWS_ASEPRITE_INSTALL_PATH :
+                DEFAULT_MAC_ASEPRITE_INSTALL_PATH);
+            asepriteExeLoc = EditorPrefs.GetString("asepriteExeLoc");
         }
 
         /// <summary>
@@ -142,7 +143,8 @@ namespace ASE_to_Unity {
             foreach (string d in Directory.GetDirectories(dir)) {
                 res.AddRange(FindAseFiles(d));
             }
-            res.AddRange(Directory.GetFiles(artFolder, "*.ase"));
+            
+            res.AddRange(Directory.GetFiles(dir, "*.ase"));
             return res;
         }
 
@@ -297,7 +299,9 @@ namespace ASE_to_Unity {
 
                             AseGUILayout.BeginArea();
                             GUILayout.Space(2);
-                            EditorGUILayout.LabelField(files[index], EditorStyles.centeredGreyMiniLabel);
+                            GUIStyle style = new GUIStyle(EditorStyles.centeredGreyMiniLabel);
+                            style.wordWrap = true;
+                            EditorGUILayout.LabelField(files[index], style);
                             GUILayout.Space(2);
                             AseGUILayout.EndArea();
 
@@ -308,7 +312,7 @@ namespace ASE_to_Unity {
                                 "Extract .ase Interpretation";
                             if (GUILayout.Button(btnText, 
                                 GUILayout.Height(35), GUILayout.MaxWidth(200)))
-                                ExtractAse(options[index]);
+                                ExtractAse(StripPath(options[index]));
                             GUILayout.FlexibleSpace();
                             EditorGUILayout.EndHorizontal();
                         }
@@ -394,10 +398,10 @@ namespace ASE_to_Unity {
         /// </summary>
         /// <param name="anim"></param>
         public void ImportAnims() {
-            string objName = options[index];
+            string objName = StripPath(options[index]);
 
             // if JSON file hasn't been created for ASE file, extract it
-            string filename = artFolder + "/" + extractLoc + options[index] + ".json";
+            string filename = artFolder + "/" + extractLoc + objName + ".json";
             if (!File.Exists(filename)) {
                 ExtractAse(files[index]);
             }
@@ -424,9 +428,9 @@ namespace ASE_to_Unity {
                         for (int j = 0; j <= clip.Count; j++)
                             if (!clip.dynamicRate) {
                                 if (j < clip.Count)
-                                    text += "\n[" + j + "]; " + clip[j] + "\t" + options[index] + "_" + (clip.start + j);
+                                    text += "\n[" + j + "]; " + clip[j] + "\t" + objName + "_" + (clip.start + j);
                             } else {
-                                text += "\n[" + j + "]; " + clip[j] + "\t" + options[index] + "_" +
+                                text += "\n[" + j + "]; " + clip[j] + "\t" + objName + "_" +
                                     (clip.start + j - ((j == clip.Count) ? 1 : 0));
                             }
                     text += "\n================================\n";
@@ -666,16 +670,23 @@ namespace ASE_to_Unity {
         /// <returns></returns>
         bool IsAbleToImportAnims() {
             if (options.Count() == 0) return false;
-            string aseName = options[index];
+            string aseName = StripPath(options[index]);
             return File.Exists(spritesLoc + aseName + ".png");
         }
 
         bool HasExtractedJSON() {
             if (options.Count() == 0) return false;
-            string aseName = options[index];
+            string aseName = StripPath(options[index]);
             return File.Exists(artFolder + extractLoc + aseName + ".json");
         }
 
+        /// <summary>
+        /// Copy component original and paste its values to a new component in the destination GameObject
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="original"></param>
+        /// <param name="destination"></param>
+        /// <returns></returns>
         static T CopyComponent<T>(T original, GameObject destination) where T : Component {
             Type type = original.GetType();
             Component copy = destination.AddComponent(type);
@@ -684,6 +695,16 @@ namespace ASE_to_Unity {
                 field.SetValue(copy, field.GetValue(original));
             }
             return copy as T;
+        }
+
+        /// <summary>
+        /// Get the file's name, without any path related elements
+        /// </summary>
+        /// <param name="option"></param>
+        /// <returns></returns>
+        static string StripPath(string option) {
+            string s = option.Replace("\\", "/");
+            return s.Contains("/") ? s.Substring(s.LastIndexOf("/") + 1) : s;
         }
 
         /// <summary>
