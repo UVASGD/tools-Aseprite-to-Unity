@@ -502,7 +502,7 @@ namespace ASE_to_Unity {
                     if (anim.runtimeAnimatorController == null) {
                         // if anim controller was created, attach it to the new GameObject
                         string destination = "Assets/Resources/Animations/"  + 
-                            (OrganizeAssets? category.ToString() : "") + objName + "/";
+                            (OrganizeAssets? category.ToString() +"/": "") + objName + "/";
                         if (Directory.Exists(destination + objName + ".controller")) {
                             anim.runtimeAnimatorController = Resources.Load(destination.Replace("Assets/Resources/", ""))
                                 as RuntimeAnimatorController;
@@ -526,6 +526,13 @@ namespace ASE_to_Unity {
             }
         }
 
+        private AnimationClip HasClip(AnimationClip[] clips, String name) {
+            foreach(AnimationClip aC in clips) {
+                if (aC.name.Equals(name)) return aC;
+            }
+            return null;
+        }
+
         /// <summary>
         /// Updates AnimationClips attached to the GameObject to reflect Sprite Animations from
         /// the respective ase file. Note that if a loop with the name of the AnimationClip does not exist
@@ -534,32 +541,19 @@ namespace ASE_to_Unity {
         /// <param name="objName"> name of the sprites to add references to </param>
         /// <param name="sprites"> list of all sprites available in the project</param>
         public void UpdateClips(string objName, Sprite[] sprites) {
+            AnimationClip aC;
+            AnimationClip[] clips = AnimationUtility.GetAnimationClips(go);
+
             // for each clip, adjust frames
-            foreach (AnimationClip aC in AnimationUtility.GetAnimationClips(go)) {
-                AseData.Clip clip = animDat[aC.name];
-                if (clip == null) {
+            // if none exists with same name, create it
+            foreach (AseData.Clip clip in animDat.clips) {
+                if ((aC = HasClip(clips, clip.name)) != null) {
+                    AnimationUtility.SetObjectReferenceCurve(aC,
+                        EditorCurveBinding.PPtrCurve("", typeof(SpriteRenderer), "m_Sprite"), 
+                        GetObjectReferences(aC, clip, sprites));
+                } else {
                     CreateClip(objName, clip, sprites);
-                    continue;
                 }
-
-                aC.frameRate = clip.sampleRate;
-                aC.wrapMode = clip.looping ? WrapMode.Loop : WrapMode.Once;
-                ObjectReferenceKeyframe[] k = new ObjectReferenceKeyframe[clip.Count + 1];
-                Sprite sprite = null;
-                for (int j = 0; j <= clip.Count; j++) {
-                    if (!clip.dynamicRate) {
-                        if (j < clip.Count)
-                            sprite = sprites[clip.start + j];
-                    } else {
-                        sprite = sprites[clip.start + j - ((j == clip.Count) ? 1 : 0)];
-                    }
-
-                    k[j] = new ObjectReferenceKeyframe();
-                    k[j].time = clip[j] * (clip.l0 / 1000f); //time is in secs? WTF!!!
-                    k[j].value = sprite;
-                }
-                AnimationUtility.SetObjectReferenceCurve(aC, 
-                    EditorCurveBinding.PPtrCurve("", typeof(SpriteRenderer), "m_Sprite"), k);
             }
         }
 
@@ -581,22 +575,8 @@ namespace ASE_to_Unity {
         /// <param name="sprites"></param>
         void CreateClip(string objName, AseData.Clip clip, Sprite[] sprites) {
             AnimationClip aC = new AnimationClip();
-            Sprite sprite = null;
             aC.frameRate = clip.sampleRate;
-            ObjectReferenceKeyframe[] k = new ObjectReferenceKeyframe[clip.Count + 1];
-
-            for (int j = 0; j <= clip.Count; j++) {
-                if (!clip.dynamicRate) {
-                    if (j < clip.Count)
-                        sprite = sprites[clip.start + j];
-                } else {
-                    sprite = sprites[clip.start + j - ((j == clip.Count) ? 1 : 0)];
-                }
-
-                k[j] = new ObjectReferenceKeyframe();
-                k[j].time = clip[j] * (clip.l0 / 1000f); //time is in secs? WTF!!!
-                k[j].value = sprite;
-            }
+            ObjectReferenceKeyframe[] k = GetObjectReferences(aC, clip, sprites);
 
             aC.SetCurve("", typeof(SpriteRenderer), "Sprite", null);
             aC.wrapMode = clip.looping ? WrapMode.Loop : WrapMode.Once;
@@ -612,6 +592,34 @@ namespace ASE_to_Unity {
             AnimatorController controller = (AnimatorController)anim.runtimeAnimatorController;
             controller.AddMotion(aC);
             
+        }
+
+        /// <summary>
+        /// get a list of references to the sprites of an animation 
+        /// at locations according to its frame speed data
+        /// </summary>
+        /// <param name="aC"></param>
+        /// <param name="clip"></param>
+        /// <param name="sprites"></param>
+        /// <returns></returns>
+        private ObjectReferenceKeyframe[] GetObjectReferences(AnimationClip aC, AseData.Clip clip, Sprite[] sprites) {
+            aC.frameRate = clip.sampleRate;
+            aC.wrapMode = clip.looping ? WrapMode.Loop : WrapMode.Once;
+            ObjectReferenceKeyframe[] k = new ObjectReferenceKeyframe[clip.Count + 1];
+            Sprite sprite = null;
+            for (int j = 0; j <= clip.Count; j++) {
+                if (!clip.dynamicRate) {
+                    if (j < clip.Count)
+                        sprite = sprites[clip.start + j];
+                } else {
+                    sprite = sprites[clip.start + j - ((j == clip.Count) ? 1 : 0)];
+                }
+
+                k[j] = new ObjectReferenceKeyframe();
+                k[j].time = clip[j] * (clip.l0 / 1000f); //time is in secs? WTF!!!
+                k[j].value = sprite;
+            }
+            return k;
         }
 
         /// <summary>
@@ -792,25 +800,8 @@ namespace ASE_to_Unity {
         /// <summary>
         /// the text to be displayed in the help window
         /// </summary>
-        private static string helpText = "Aseprite to Unity allows you to save time importing those awesome pixel art animations your artists have spent hours creating!\n\n" +
-            "It's actually pretty simple to use. First, make sure your artists have followed standard practices for creating their animations. This includes:\n" +
-                "\t- saving all animations loops for the same object in .ase file\n" +
-                "\t- animation loops have names that accurately reflect their purpose in-game\n" +
-                "\t- all.ase files can be found under a single folder\n" +
-                "\t- hiding layers that should not be visible in the final sprite\n" +
-                "\t- (optional) setting loop types in Aseprite for animations that do not loop\n" +
-            "\nOnce that has been verified, now you must set the extraction settings in Unity.\n\n" +
-                "\t1) Aseprite.exe - In order to run this tool, you must have Aseprite installed on the local machine. This field is set to the default installation location acording to your machine, but if you've installed it in a custom folder you must browse to it.\n" +
-                "\t2) Art Source Folder - This is where all the.ase files are stored. ASE to Unity will also create.JSON representations that will be used to fully read all animation data, as it is unable to directly parse the.ase file itself. \n" +
-                "\t3) Sprites Folder - This is where you want store all your exported sprites. Because the tool also uses Unity's Resource manager, this folder must be located within a folder called \"Resources\". This folder can be anywhere in your projcet, and the Sprites folder need not be a direct child of it.\n" +
-                "\t4) Aseprite file - This is the file you want to import! If you have set the Art Source Folder to one that contains.ase files, this will list ALL of the.ase files found, INCLUDING FILES THAT MIGHT SHARE THE SAME NAME. Please make sure you have selected the correct file!\n" +
-            
-            "\nNext, it is time to import the animations.This can only be done if the proper extraction settings have been set. Now, you might notice that you have 3 options for how to import your file.\n" +
-                "\tDebugging Output - This doesn't import any animation data, but it will output information it was able to read from the JSON\n" +
-                "\tApplying Directly to Object - This allows you to update an object that currently exists within the scene with the newly created animation data\n" +
-                "\tCreating New GameObject - This will create a new GameObject with the necessary components into the scene.It will have the same name as the selected .ase file. You can also copy components from a reference GameObject into the newly created object.\n" +
-            "\nImporting animations for the first time will create animation clips AND animation controllers specific to the.ase file. All animations will be saved under \"Resources/Animations/[ase file name]/\", for improved organization and Resource Management.If a .controller file already exists for the.ase you want to import but is not in the previously mentioned folder, a new one will be created and attached to the GameObject.\n" +
-            "\nOrganization";
+        private static string helpText = "Visit https://github.com/UVASGD/tools-Aseprite-to-Unity/blob/master/Readme.md " +
+            "for information on how to use this! It even includes PICTURES!";
     }
 
     #region Extra Classes
