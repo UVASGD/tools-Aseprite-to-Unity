@@ -79,6 +79,7 @@ namespace ASE_to_Unity {
         private int iconSize = 40;
         /// <summary> Master control for window scrolling </summary>
         private Vector2 MasterScrollPosition;
+        private float OptionPopupSize;
         /// <summary>  </summary>
 
         #endregion
@@ -97,7 +98,9 @@ namespace ASE_to_Unity {
 
         [MenuItem("Tools/Anim Import")]
         private static void AnimImport() {
-            EditorWindow.GetWindow(typeof(Anim_Import)).name = "AE to Unity";
+            EditorWindow window = EditorWindow.GetWindow(typeof(Anim_Import));
+            window.name = "AE to Unity";
+            window.minSize = new Vector2(400, 100);
         }
 
         #region ---- INIT ----
@@ -105,8 +108,8 @@ namespace ASE_to_Unity {
         /// <summary>
         /// locates the art folder by assuming it is found in the same directory as the Unity project by the name "Art"
         /// </summary>
-        void OnEnable() {
-            if (String.IsNullOrEmpty(EditorPrefs.GetString(artFolder))) {
+        void OnEnable() {   
+            if (String.IsNullOrEmpty(EditorPrefs.GetString(artFolder)) || files == null) {
                 string s = Application.dataPath;
                 string key = s.Contains("/") ? "/" : "\\";
                 s = s.Replace(key + "Assets", "");
@@ -125,6 +128,9 @@ namespace ASE_to_Unity {
                 EditorPrefs.SetString(asepriteExeLoc, isWindows ? DEFAULT_WINDOWS_ASEPRITE_INSTALL_PATH :
                     DEFAULT_MAC_ASEPRITE_INSTALL_PATH);
             }
+
+            if (OptionPopupSize == 0)
+                FindMaxOptionPopupSize();
         }
 
         /// <summary>
@@ -134,8 +140,22 @@ namespace ASE_to_Unity {
             files = FindAseFiles(EditorPrefs.GetString(artFolder)).ToArray();
 
             options = new string[files.Length];
-            for (int i = 0; i < files.Length; i++)
+            for (int i = 0; i < files.Length; i++) {
                 options[i] = files[i].Replace(EditorPrefs.GetString(artFolder), "").Replace(".ase", "");
+            }
+            FindMaxOptionPopupSize();
+        }
+
+        private void FindMaxOptionPopupSize() {
+            if (options.Count() == 0) {
+                OptionPopupSize = 50;
+                return;
+            }
+
+            string max = "";
+            foreach (string s in options) 
+                max = s.Length > max.Length ? s : max;
+            OptionPopupSize = EditorStyles.label.CalcSize(new GUIContent(max)).x/2f;
         }
 
         /// <summary>
@@ -302,7 +322,7 @@ namespace ASE_to_Unity {
                         } else {
                             GUILayout.BeginHorizontal();
                             EditorGUILayout.LabelField("Aseprite File");
-                            index = EditorGUILayout.Popup(index, options);
+                            index = EditorGUILayout.Popup(index, options, GUILayout.MinWidth(OptionPopupSize));
                             GUILayout.EndHorizontal();
 
                             AseGUILayout.BeginArea();
@@ -320,7 +340,7 @@ namespace ASE_to_Unity {
                                 "Extract .ase Interpretation";
                             if (GUILayout.Button(btnText, 
                                 GUILayout.Height(35), GUILayout.MaxWidth(200)))
-                                ExtractAse(StripPath(options[index]));
+                                ExtractAse(AseUtils.StripPath(options[index]));
                             GUILayout.FlexibleSpace();
                             EditorGUILayout.EndHorizontal();
                         }
@@ -407,7 +427,7 @@ namespace ASE_to_Unity {
         /// </summary>
         /// <param name="anim"></param>
         public void ImportAnims() {
-            string objName = StripPath(options[index]);
+            string objName = AseUtils.StripPath(options[index]);
 
             // if JSON file hasn't been created for ASE file, extract it
             string filename = EditorPrefs.GetString(artFolder) + "/" + extractLoc + objName + ".json";
@@ -471,7 +491,7 @@ namespace ASE_to_Unity {
                         if (referenceObject != null)
                             foreach (Component c in referenceObject.GetComponents<Component>()) {
                                 if (!(c is SpriteRenderer) && !(c is Animator)) {
-                                    CopyComponent(c, go);
+                                    AseUtils.CopyComponent(c, go);
                                 }
                             }
                     }
@@ -481,7 +501,8 @@ namespace ASE_to_Unity {
                     // if animator has no controller, we must set it to something
                     if (anim.runtimeAnimatorController == null) {
                         // if anim controller was created, attach it to the new GameObject
-                        string destination = "Assets/Resources/Animations/" + objName + "/";
+                        string destination = "Assets/Resources/Animations/"  + 
+                            (OrganizeAssets? category.ToString() : "") + objName + "/";
                         if (Directory.Exists(destination + objName + ".controller")) {
                             anim.runtimeAnimatorController = Resources.Load(destination.Replace("Assets/Resources/", ""))
                                 as RuntimeAnimatorController;
@@ -598,6 +619,7 @@ namespace ASE_to_Unity {
         /// </summary>
         /// <param name="aseName"></param>
         void ExtractAse(string asePath) {
+            asePath = asePath.Replace("\\", "/");
             if (!isWindows) {
                 ExtractAseMac(asePath);
                 return;
@@ -640,6 +662,7 @@ namespace ASE_to_Unity {
         /// </summary>
         /// <param name="asePath"></param>
         void ExtractSpriteSheet(string asePath) {
+            asePath = asePath.Replace("\\", "/");
             if (!isWindows) {
                 ExtractSpriteSheetMac(asePath);
                 return;
@@ -679,41 +702,14 @@ namespace ASE_to_Unity {
         /// <returns></returns>
         bool IsAbleToImportAnims() {
             if (options.Count() == 0) return false;
-            string aseName = StripPath(options[index]);
+            string aseName = AseUtils.StripPath(options[index]);
             return File.Exists(spritesLoc + aseName + ".png");
         }
 
         bool HasExtractedJSON() {
             if (options.Count() == 0) return false;
-            string aseName = StripPath(options[index]);
+            string aseName = AseUtils.StripPath(options[index]);
             return File.Exists(EditorPrefs.GetString(artFolder) + extractLoc + aseName + ".json");
-        }
-
-        /// <summary>
-        /// Copy component original and paste its values to a new component in the destination GameObject
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="original"></param>
-        /// <param name="destination"></param>
-        /// <returns></returns>
-        static T CopyComponent<T>(T original, GameObject destination) where T : Component {
-            Type type = original.GetType();
-            Component copy = destination.AddComponent(type);
-            FieldInfo[] fields = type.GetFields();
-            foreach (FieldInfo field in fields) {
-                field.SetValue(copy, field.GetValue(original));
-            }
-            return copy as T;
-        }
-
-        /// <summary>
-        /// Get the file's name, without any path related elements
-        /// </summary>
-        /// <param name="option"></param>
-        /// <returns></returns>
-        static string StripPath(string option) {
-            string s = option.Replace("\\", "/");
-            return s.Contains("/") ? s.Substring(s.LastIndexOf("/") + 1) : s;
         }
 
         /// <summary>
@@ -726,6 +722,7 @@ namespace ASE_to_Unity {
         private void ApplyTextureImportSettings(string spritePath, AseData ase) {
             string assetLocalPath = spritePath.Substring(spritePath.IndexOf("Assets/"));
 
+            UnityEngine.Debug.Log("ALP: " + assetLocalPath);
             TextureImporter importer = (TextureImporter)AssetImporter.GetAtPath(assetLocalPath);
             importer.textureCompression = TextureImporterCompression.Uncompressed;
             importer.textureType = TextureImporterType.Sprite;

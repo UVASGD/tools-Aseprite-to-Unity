@@ -109,7 +109,7 @@ namespace ASE_to_Unity {
             } else {
                 for (int i = 0; i < tags.Count; i++) {
                     Clip clip = new Clip(anim,
-                        tags[i]["name"].ToString(),
+                        AseUtils.UppercaseFirst(tags[i]["name"].ToString()),
                         int.Parse(tags[i]["from"].ToString()),
                         int.Parse(tags[i]["to"].ToString()),
                         tags[i]["direction"].ToString().Equals("forward"));
