@@ -62,6 +62,7 @@ namespace ASE_to_Unity {
         private const string category = REG_NAME + "category";
         /// <summary> whether or not to directly attach animation clips to object </summary>
         private const string importPreference = REG_NAME + "importPreference";
+        private const string isAnimation = REG_NAME + "isAnimation";
 
         #endregion
 
@@ -138,6 +139,7 @@ namespace ASE_to_Unity {
             if (String.IsNullOrEmpty(EditorPrefs.GetString(importFoldout))) EditorPrefs.SetBool(importFoldout, true);
             if (String.IsNullOrEmpty(EditorPrefs.GetString(experimentalFoldout))) EditorPrefs.SetBool(experimentalFoldout, true);
             if (String.IsNullOrEmpty(EditorPrefs.GetString(autoFindSprites))) EditorPrefs.SetBool(autoFindSprites, true);
+            if (String.IsNullOrEmpty(EditorPrefs.GetString(isAnimation))) EditorPrefs.SetBool(isAnimation, true);
         }
 
         /// <summary>
@@ -269,7 +271,7 @@ namespace ASE_to_Unity {
             EditorGUI.DropShadowLabel(rect, MAIN_TITLE, shadowStyle);
             GUI.Label(rect, MAIN_TITLE, style);
 
-            GUILayout.Space(20);
+            GUILayout.Space(15);
         }
 
         void SettingsGUI() {
@@ -409,11 +411,15 @@ namespace ASE_to_Unity {
                                  "No .ase files found in Source Folder.",
                                  MessageType.Info);
                         } else {
+                            EditorPrefs.SetBool(isAnimation, EditorGUILayout.BeginToggleGroup("Is animated file",
+                                EditorPrefs.GetBool(isAnimation)));
+
                             GUILayout.BeginHorizontal();
                             EditorGUILayout.LabelField("Aseprite File");
                             EditorPrefs.SetInt(index, EditorGUILayout.Popup(EditorPrefs.GetInt(index),
                                 options, GUILayout.MinWidth(OptionPopupSize)));
                             GUILayout.EndHorizontal();
+                            EditorGUILayout.EndToggleGroup();
 
                             AseGUILayout.BeginArea();
                             GUILayout.Space(2);
@@ -450,40 +456,43 @@ namespace ASE_to_Unity {
         void ImportGUI() {
             if (Directory.Exists(EditorPrefs.GetString(artFolder)) && File.Exists(EditorPrefs.GetString(asepriteExeLoc) + "aseprite.exe")) {
                 EditorPrefs.SetBool(importFoldout, AseGUILayout.BeginFold(
-                    EditorPrefs.GetBool(importFoldout), "Import Aseprite Animations"));
+                    EditorPrefs.GetBool(importFoldout), EditorPrefs.GetBool(isAnimation) ?
+                    "Import Aseprite Animations" : "Import Aseprite Spritesheet"));
                 if (EditorPrefs.GetBool(importFoldout) && files.Count() > 0) {
 
-                    EditorPrefs.SetString(importPreference, EditorGUILayout.EnumPopup("Import By:",
-                         (ImportType)Enum.Parse(typeof(ImportType),
-                         EditorPrefs.GetString(importPreference))).ToString());
+                    if (EditorPrefs.GetBool(isAnimation)) {
+                        EditorPrefs.SetString(importPreference, EditorGUILayout.EnumPopup("Import By:",
+                             (ImportType)Enum.Parse(typeof(ImportType),
+                             EditorPrefs.GetString(importPreference))).ToString());
 
-                    if (ImportPref != ImportType.DebuggingOutput) {
-                        update = EditorGUILayout.Toggle("Update Existing Clips", update);
-                        if (update) {
-                            EditorGUI.HelpBox(AseGUILayout.GUIRect(0, iconSize),
-                             "If the names of the clips don't match the loop names " +
-                                "from the .ase file, new clips will be created for mismatches " +
-                                "instead.",
-                             MessageType.Warning);
+                        if (ImportPref != ImportType.DebuggingOutput) {
+                            update = EditorGUILayout.Toggle("Update Existing Clips", update);
+                            if (update) {
+                                EditorGUI.HelpBox(AseGUILayout.GUIRect(0, iconSize),
+                                 "If the names of the clips don't match the loop names " +
+                                    "from the .ase file, new clips will be created for mismatches " +
+                                    "instead.",
+                                 MessageType.Warning);
+                            }
                         }
-                    }
-                    if (ImportPref == ImportType.ApplyingToExistingObject) {
-                        go = EditorGUILayout.ObjectField("Target Gameobject", go,
-                            typeof(GameObject), true) as GameObject;
-                    }
-                    if (ImportPref == ImportType.CreatingNewObject) {
-                        scale = EditorGUILayout.FloatField("Automatic Scaling", scale);
-                        referenceObject = EditorGUILayout.ObjectField("Reference Game Object",
-                            referenceObject, typeof(GameObject), true) as GameObject;
-                    } else referenceObject = null;
+                        if (ImportPref == ImportType.ApplyingToExistingObject) {
+                            go = EditorGUILayout.ObjectField("Target Gameobject", go,
+                                typeof(GameObject), true) as GameObject;
+                        }
+                        if (ImportPref == ImportType.CreatingNewObject) {
+                            scale = EditorGUILayout.FloatField("Automatic Scaling", scale);
+                            referenceObject = EditorGUILayout.ObjectField("Reference Game Object",
+                                referenceObject, typeof(GameObject), true) as GameObject;
+                        } else referenceObject = null;
 
-                    if (!EditorPrefs.GetBool(autoFindSprites)) {
-                        spritesheet = (Texture2D)EditorGUILayout.ObjectField("Source Spritesheet", spritesheet, typeof(Texture2D), false);
+                        if (!EditorPrefs.GetBool(autoFindSprites)) {
+                            spritesheet = (Texture2D)EditorGUILayout.ObjectField("Source Spritesheet", spritesheet, typeof(Texture2D), false);
 
-                        if(spritesheet == null) {
-                            EditorGUI.HelpBox(AseGUILayout.GUIRect(0, iconSize),
-                             "Cannot import any animations without a spritesheet!",
-                             MessageType.Warning);
+                            if (spritesheet == null) {
+                                EditorGUI.HelpBox(AseGUILayout.GUIRect(0, iconSize),
+                                 "Cannot import any animations without a spritesheet!",
+                                 MessageType.Warning);
+                            }
                         }
                     }
 
@@ -592,67 +601,69 @@ namespace ASE_to_Unity {
             }
 
             // directly update animation data
-            if (ImportPref != ImportType.DebuggingOutput) {
-                if (ImportPref == ImportType.ApplyingToExistingObject && go == null) {
-                    if (EditorPrefs.GetBool("outputToConsole"))
-                        UnityEngine.Debug.LogError("GameObject cannot be null!");
-                    return;
-                }
+            if (EditorPrefs.GetBool(isAnimation)) {
+                if (ImportPref != ImportType.DebuggingOutput) {
+                    if (ImportPref == ImportType.ApplyingToExistingObject && go == null) {
+                        if (EditorPrefs.GetBool("outputToConsole"))
+                            UnityEngine.Debug.LogError("GameObject cannot be null!");
+                        return;
+                    }
 
-                string path = EditorPrefs.GetBool(autoFindSprites) ?
-                    spritesLoc + objName : AssetDatabase.GetAssetPath(spritesheet)
-                    .Substring(0, AssetDatabase.GetAssetPath(spritesheet).IndexOf("."));
-                path = path.Substring(path.IndexOf("Assets/"))
-                    .Replace("Assets/", "").Replace("Resources/", "");
-                Sprite[] sprites = Resources.LoadAll<Sprite>(path);
-                if (sprites.Length <= 0) {
-                    if (!IsAbleToImportAnims()) {
-                        if(EditorPrefs.GetBool("outputToConsole"))
-                            UnityEngine.Debug.LogError("Sprites for \"" + objName + "\" were not found.\n" + path);
-                    } else
-                        if(EditorPrefs.GetBool("outputToConsole"))
+                    string path = EditorPrefs.GetBool(autoFindSprites) ?
+                        spritesLoc + objName : AssetDatabase.GetAssetPath(spritesheet)
+                        .Substring(0, AssetDatabase.GetAssetPath(spritesheet).IndexOf("."));
+                    path = path.Substring(path.IndexOf("Assets/"))
+                        .Replace("Assets/", "").Replace("Resources/", "");
+                    Sprite[] sprites = Resources.LoadAll<Sprite>(path);
+                    if (sprites.Length <= 0) {
+                        if (!IsAbleToImportAnims()) {
+                            if (EditorPrefs.GetBool("outputToConsole"))
+                                UnityEngine.Debug.LogError("Sprites for \"" + objName + "\" were not found.\n" + path);
+                        } else
+                            if (EditorPrefs.GetBool("outputToConsole"))
                             UnityEngine.Debug.Log("Created spritesheet for " + objName + " in " + path.Replace(objName, ""));
-                } else {
-                    if (ImportPref == ImportType.CreatingNewObject) {
-                        go = new GameObject(objName, typeof(SpriteRenderer), typeof(Animator));
-                        go.transform.localScale = scale * Vector3.one;
+                    } else {
+                        if (ImportPref == ImportType.CreatingNewObject) {
+                            go = new GameObject(objName, typeof(SpriteRenderer), typeof(Animator));
+                            go.transform.localScale = scale * Vector3.one;
 
-                        // copy components frrom a reference object
-                        // good for adding things like physic objects and AI scripts from a generic model
-                        if (referenceObject != null)
-                            foreach (Component c in referenceObject.GetComponents<Component>()) {
-                                if (!(c is SpriteRenderer) && !(c is Animator)) {
-                                    AseUtils.CopyComponent(c, go);
+                            // copy components frrom a reference object
+                            // good for adding things like physic objects and AI scripts from a generic model
+                            if (referenceObject != null)
+                                foreach (Component c in referenceObject.GetComponents<Component>()) {
+                                    if (!(c is SpriteRenderer) && !(c is Animator)) {
+                                        AseUtils.CopyComponent(c, go);
+                                    }
                                 }
-                            }
-                    }
-
-                    Animator anim = go.GetComponent<Animator>();
-
-                    // if animator has no controller, we must set it to something
-                    if (anim.runtimeAnimatorController == null) {
-                        // if anim controller was created, attach it to the new GameObject
-                        string destination = "Assets/Resources/Animations/"  + 
-                            (OrganizeAssets? Category.ToString() + "/": "") + objName + "/";
-                        if (Directory.Exists(destination + objName + ".controller")) {
-                            anim.runtimeAnimatorController = Resources.Load(destination.Replace("Assets/Resources/", ""))
-                                as RuntimeAnimatorController;
-                        } else {
-                            if (!Directory.Exists(destination))
-                                Directory.CreateDirectory(destination);
-                            anim.runtimeAnimatorController = AnimatorController
-                                .CreateAnimatorControllerAtPath(destination + objName + ".controller");
                         }
+
+                        Animator anim = go.GetComponent<Animator>();
+
+                        // if animator has no controller, we must set it to something
+                        if (anim.runtimeAnimatorController == null) {
+                            // if anim controller was created, attach it to the new GameObject
+                            string destination = "Assets/Resources/Animations/" +
+                                (OrganizeAssets ? Category.ToString() + "/" : "") + objName + "/";
+                            if (Directory.Exists(destination + objName + ".controller")) {
+                                anim.runtimeAnimatorController = Resources.Load(destination.Replace("Assets/Resources/", ""))
+                                    as RuntimeAnimatorController;
+                            } else {
+                                if (!Directory.Exists(destination))
+                                    Directory.CreateDirectory(destination);
+                                anim.runtimeAnimatorController = AnimatorController
+                                    .CreateAnimatorControllerAtPath(destination + objName + ".controller");
+                            }
+                        }
+
+                        // set object's default image
+                        if (ImportPref == ImportType.CreatingNewObject)
+                            go.GetComponent<SpriteRenderer>().sprite = sprites[0];
+
+                        if (update) UpdateClips(objName, sprites);
+                        else CreateClips(objName, sprites);
+
+                        AssetDatabase.SaveAssets();
                     }
-
-                    // set object's default image
-                    if (ImportPref == ImportType.CreatingNewObject)
-                        go.GetComponent<SpriteRenderer>().sprite = sprites[0];
-
-                    if (update) UpdateClips(objName, sprites);
-                    else CreateClips(objName, sprites);
-
-                    AssetDatabase.SaveAssets();
                 }
             }
         }
@@ -895,7 +906,7 @@ namespace ASE_to_Unity {
         /// </summary>
         /// <returns></returns>
         bool IsAbleToImportAnims() {
-            if (options.Count() == 0) return false;
+            if(!EditorPrefs.GetBool(isAnimation) || options.Count() == 0) return false;
             string aseName = AseUtils.StripPath(options[EditorPrefs.GetInt(index)]);
             return File.Exists(spritesLoc + aseName + ".png");
         }
