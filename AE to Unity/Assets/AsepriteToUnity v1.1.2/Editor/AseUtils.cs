@@ -17,6 +17,7 @@ namespace ASE_to_Unity {
         /// <returns></returns>
         public static T CopyComponent<T>(T original, GameObject destination) where T : Component {
             Type type = original.GetType();
+            if (original is Transform) return null;
             Component copy = destination.AddComponent(type);
             FieldInfo[] fields = type.GetFields();
             foreach (FieldInfo field in fields) {
