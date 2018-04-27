@@ -563,12 +563,13 @@ namespace ASE_to_Unity {
             } else {
                 animDat.name = objName;
 
-                // create sprites if not available
                 if (EditorPrefs.GetBool(autoFindSprites)) {
+                // create sprites if not available
                     if (!SpritesExist(objName))
                         ExtractSpriteSheet(files[EditorPrefs.GetInt(index)]);
                 } else {
-
+                    // cannot operate without a spritesheet
+                    if (spritesheet == null) return;
                 }
 
                 // update debug text area
@@ -598,10 +599,12 @@ namespace ASE_to_Unity {
                     return;
                 }
 
-                string path = spritesLoc.Substring(spritesLoc.IndexOf("Assets/"))
-                    .Replace("Assets/", "").Replace("Resources/", "") + objName;
-                Sprite[] sprites = Resources.LoadAll<Sprite>(EditorPrefs.GetBool(autoFindSprites) ? path
-                    : AssetDatabase.GetAssetPath(spritesheet));
+                string path = EditorPrefs.GetBool(autoFindSprites) ?
+                    spritesLoc + objName : AssetDatabase.GetAssetPath(spritesheet)
+                    .Substring(0, AssetDatabase.GetAssetPath(spritesheet).IndexOf("."));
+                path = path.Substring(path.IndexOf("Assets/"))
+                    .Replace("Assets/", "").Replace("Resources/", "");
+                Sprite[] sprites = Resources.LoadAll<Sprite>(path);
                 if (sprites.Length <= 0) {
                     if (!IsAbleToImportAnims()) {
                         if(EditorPrefs.GetBool("outputToConsole"))
@@ -748,8 +751,6 @@ namespace ASE_to_Unity {
                 if (j < k.Length) {
                     k[j] = new ObjectReferenceKeyframe();
                     k[j].time = clip[j] * (clip.l0 / 1000f); //time is in secs? WTF!!!
-                    UnityEngine.Debug.Log(clip.name + "| " + k[j].time);
-
                     k[j].value = sprite;
                 }
             }
