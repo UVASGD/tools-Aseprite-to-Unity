@@ -831,6 +831,8 @@ namespace ASE_to_Unity {
                aseJSONLoc + aseName + ".json\" \"" + asePath;
             process.StartInfo = startInfo;
             process.Start();
+
+            while (!process.HasExited) { }
         }
 
         /// <summary>
