@@ -572,9 +572,8 @@ namespace ASE_to_Unity {
                 //    }
                 //}
                 //EditorGUI.EndDisabledGroup();
-                    
-                GUILayout.FlexibleSpace();
-                EditorGUILayout.EndHorizontal();
+                //GUILayout.FlexibleSpace();
+                //EditorGUILayout.EndHorizontal();
             }  AseGUILayout.EndFold();
         }
 
@@ -722,6 +721,7 @@ namespace ASE_to_Unity {
             // if none exists with same name, create it
             foreach (AseData.Clip clip in animDat.clips) {
                 if ((aC = HasClip(clips, clip.name)) != null) {
+                    UnityEngine.Debug.Log("Updating");
                     AnimationUtility.SetObjectReferenceCurve(aC,
                         EditorCurveBinding.PPtrCurve("", typeof(SpriteRenderer), "m_Sprite"), 
                         GetObjectReferences(aC, clip, sprites));
