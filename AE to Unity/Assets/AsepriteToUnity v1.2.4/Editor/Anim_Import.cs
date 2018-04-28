@@ -60,6 +60,8 @@ namespace ASE_to_Unity {
         private const string index = REG_NAME + "fileIndex";
         /// <summary> the category of the current sprite that is being updated </summary>
         private const string category = REG_NAME + "category";
+        /// <summary> custom category name set by user </summary>
+        private const string customCategory = REG_NAME + "customCategory";
         /// <summary> whether or not to directly attach animation clips to object </summary>
         private const string importPreference = REG_NAME + "importPreference";
         private const string isAnimation = REG_NAME + "isAnimation";
@@ -223,10 +225,12 @@ namespace ASE_to_Unity {
             }
         }
 
-        private SpriteCategory Category {
+        private string Category {
             get {
-                return (SpriteCategory)Enum.Parse(typeof(SpriteCategory), 
-                    EditorPrefs.GetString(category));
+                string cat = EditorPrefs.GetString(category);
+                if (cat.Equals(SpriteCategory.Other.ToString()))
+                    return EditorPrefs.GetString(customCategory);
+                return cat;
             }
         }
 
@@ -241,9 +245,9 @@ namespace ASE_to_Unity {
             HeaderGUI();
             HelpGUI();
             ExtractGUI();
-            ImportGUI();
             if (EditorPrefs.GetBool(experimentalEnabled))
                 AnimControlFormatGUI();
+            ImportGUI();
             SettingsGUI();
 
             GUILayout.EndScrollView();
@@ -383,11 +387,11 @@ namespace ASE_to_Unity {
 
                         // add subfolder organization
                         spritesLoc = EditorPrefs.GetString(rootSpritesLoc) + (OrganizeAssets ? 
-                            Category.ToString() + "/" : "");
+                            Category + "/" : "");
                         // remove subfolder organization if it is unwanted
                         if (!OrganizeAssets && spritesLoc.Equals(EditorPrefs.GetString(rootSpritesLoc) +
-                            Category.ToString() + "/"))
-                            spritesLoc = spritesLoc.Substring(0, spritesLoc.LastIndexOf(Category.ToString()));
+                            Category + "/"))
+                            spritesLoc = spritesLoc.Substring(0, spritesLoc.LastIndexOf(Category));
 
                         // validate root sprite location
                         if (!Directory.Exists(EditorPrefs.GetString(rootSpritesLoc)))
@@ -411,7 +415,10 @@ namespace ASE_to_Unity {
                                  "No .ase files found in Source Folder.",
                                  MessageType.Info);
                         } else {
-                            EditorPrefs.SetBool(isAnimation, EditorGUILayout.BeginToggleGroup("Is animated file",
+                            if (EditorPrefs.GetInt(index) > files.Length)
+                                EditorPrefs.SetInt(index, files.Length - 1);
+
+                            EditorPrefs.SetBool(isAnimation, EditorGUILayout.Toggle("Is animated file",
                                 EditorPrefs.GetBool(isAnimation)));
 
                             GUILayout.BeginHorizontal();
@@ -419,26 +426,28 @@ namespace ASE_to_Unity {
                             EditorPrefs.SetInt(index, EditorGUILayout.Popup(EditorPrefs.GetInt(index),
                                 options, GUILayout.MinWidth(OptionPopupSize)));
                             GUILayout.EndHorizontal();
-                            EditorGUILayout.EndToggleGroup();
 
                             AseGUILayout.BeginArea();
                             GUILayout.Space(2);
                             GUIStyle style = new GUIStyle(EditorStyles.centeredGreyMiniLabel);
                             style.wordWrap = true;
-                            EditorGUILayout.LabelField(files[EditorPrefs.GetInt(index)], style);
+                            EditorGUILayout.LabelField(files[EditorPrefs.GetInt(index)]
+                                .Replace("\\","/"), style);
                             GUILayout.Space(2);
                             AseGUILayout.EndArea();
 
                             // extract data from ase file
+                            EditorGUI.BeginDisabledGroup(!EditorPrefs.GetBool(isAnimation));
                             EditorGUILayout.BeginHorizontal();
                             GUILayout.FlexibleSpace();
                             string btnText = HasExtractedJSON() ? "Update .ase Interpretation" :
                                 "Extract .ase Interpretation";
                             if (GUILayout.Button(btnText, 
                                 GUILayout.Height(35), GUILayout.MaxWidth(200)))
-                                ExtractAse(AseUtils.StripPath(options[EditorPrefs.GetInt(index)]));
+                                ExtractAse(files[EditorPrefs.GetInt(index)]);
                             GUILayout.FlexibleSpace();
                             EditorGUILayout.EndHorizontal();
+                            EditorGUI.EndDisabledGroup();
                         }
                     } else {
                         //GUI.DrawTexture(AseGUILayout.GUIRect(iconSize, iconSize), DirFileIcon);
@@ -472,7 +481,7 @@ namespace ASE_to_Unity {
                                  "If the names of the clips don't match the loop names " +
                                     "from the .ase file, new clips will be created for mismatches " +
                                     "instead.",
-                                 MessageType.Warning);
+                                 MessageType.Info);
                             }
                         }
                         if (ImportPref == ImportType.ApplyingToExistingObject) {
@@ -499,7 +508,12 @@ namespace ASE_to_Unity {
                     AseGUILayout.BeginArea();
                     OrganizeAssets = EditorGUILayout.BeginToggleGroup("Organize Assets", OrganizeAssets);
                     EditorPrefs.SetString(category, EditorGUILayout.EnumPopup("Import Subfolder:", 
-                        Category).ToString());
+                        (SpriteCategory)Enum.Parse(typeof(SpriteCategory), 
+                        EditorPrefs.GetString(category))).ToString());
+                    if (EditorPrefs.GetString(category).Equals(SpriteCategory.Other.ToString())){
+                        EditorPrefs.SetString(customCategory, EditorGUILayout.TextField("Custom Category:",
+                            EditorPrefs.GetString(customCategory)));
+                    }
                     EditorGUILayout.EndToggleGroup();
                     
                     EditorGUILayout.BeginHorizontal();
@@ -543,6 +557,24 @@ namespace ASE_to_Unity {
                         MessageType.Warning);
                 }
 
+
+                //EditorGUILayout.BeginHorizontal();
+                //GUILayout.FlexibleSpace();
+                //RuntimeAnimatorController rAC = null;
+                //bool disabled;
+                //if (!(disabled = (go == null))) 
+                //    if (!(disabled = (go.GetComponent<Animator>()==null))) 
+                //        disabled = ((rAC = go.GetComponent<Animator>().runtimeAnimatorController) == null);
+                //EditorGUI.BeginDisabledGroup(disabled);
+                //if (GUILayout.Button("Check Wrapmode", GUILayout.Height(35), GUILayout.MaxWidth(200))) {
+                //    foreach(AnimationClip aC in rAC.animationClips) {
+                //        UnityEngine.Debug.Log(aC.name + ": " + aC.wrapMode.ToString());
+                //    }
+                //}
+                //EditorGUI.EndDisabledGroup();
+                    
+                GUILayout.FlexibleSpace();
+                EditorGUILayout.EndHorizontal();
             }  AseGUILayout.EndFold();
         }
 
@@ -643,7 +675,7 @@ namespace ASE_to_Unity {
                         if (anim.runtimeAnimatorController == null) {
                             // if anim controller was created, attach it to the new GameObject
                             string destination = "Assets/Resources/Animations/" +
-                                (OrganizeAssets ? Category.ToString() + "/" : "") + objName + "/";
+                                (OrganizeAssets ? Category + "/" : "") + objName + "/";
                             if (Directory.Exists(destination + objName + ".controller")) {
                                 anim.runtimeAnimatorController = Resources.Load(destination.Replace("Assets/Resources/", ""))
                                     as RuntimeAnimatorController;
@@ -725,7 +757,7 @@ namespace ASE_to_Unity {
             AnimationUtility.SetObjectReferenceCurve(aC, EditorCurveBinding.
                 PPtrCurve("", typeof(SpriteRenderer), "m_Sprite"), k);
             string destination = "Assets/Resources/Animations/" +
-                (OrganizeAssets ? Category.ToString() + "/" : "") + objName + "/";
+                (OrganizeAssets ? Category + "/" : "") + objName + "/";
             if (!Directory.Exists(destination))
                 Directory.CreateDirectory(destination);
             AssetDatabase.CreateAsset(aC, destination + clip.name + ".anim");
@@ -747,6 +779,12 @@ namespace ASE_to_Unity {
         private ObjectReferenceKeyframe[] GetObjectReferences(AnimationClip aC, AseData.Clip clip, Sprite[] sprites) {
             aC.frameRate = clip.sampleRate;
             aC.wrapMode = clip.looping ? WrapMode.Loop : WrapMode.Once;
+
+            SerializedObject sC = new SerializedObject(aC);
+            SerializedProperty clipSettings = sC.FindProperty("m_AnimationClipSettings");
+            clipSettings.FindPropertyRelative("m_LoopTime").boolValue = clip.looping;
+            sC.ApplyModifiedProperties();
+
             ObjectReferenceKeyframe[] k = new ObjectReferenceKeyframe[clip.Count + (!clip.dynamicRate ? 0 : 1)];
             Sprite sprite = null;
             for (int j = 0; j <= clip.Count; j++) {

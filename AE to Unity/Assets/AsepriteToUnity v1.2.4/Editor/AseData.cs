@@ -113,9 +113,11 @@ namespace ASE_to_Unity {
                         int.Parse(tags[i]["from"].ToString()),
                         int.Parse(tags[i]["to"].ToString()),
                         tags[i]["direction"].ToString().Equals("forward"));
+                    //Debug.Log(clip.name + " looping: " + clip.looping);
                     anim.clips.Add(clip);
                 }
             }
+
             return anim;
         }
     }

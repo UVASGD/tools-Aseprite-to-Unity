@@ -1,0 +1,5657 @@
+fileFormatVersion: 2
+guid: 10836d1a4ef5b004a86784d5fccede22
+timeCreated: 1524873309
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: maleplayer1_0
+    21300002: maleplayer1_1
+    21300004: maleplayer1_2
+    21300006: maleplayer1_3
+    21300008: maleplayer1_4
+    21300010: maleplayer1_5
+    21300012: maleplayer1_6
+    21300014: maleplayer1_7
+    21300016: maleplayer1_8
+    21300018: maleplayer1_9
+    21300020: maleplayer1_10
+    21300022: maleplayer1_11
+    21300024: maleplayer1_12
+    21300026: maleplayer1_13
+    21300028: maleplayer1_14
+    21300030: maleplayer1_15
+    21300032: maleplayer1_16
+    21300034: maleplayer1_17
+    21300036: maleplayer1_18
+    21300038: maleplayer1_19
+    21300040: maleplayer1_20
+    21300042: maleplayer1_21
+    21300044: maleplayer1_22
+    21300046: maleplayer1_23
+    21300048: maleplayer1_24
+    21300050: maleplayer1_25
+    21300052: maleplayer1_26
+    21300054: maleplayer1_27
+    21300056: maleplayer1_28
+    21300058: maleplayer1_29
+    21300060: maleplayer1_30
+    21300062: maleplayer1_31
+    21300064: maleplayer1_32
+    21300066: maleplayer1_33
+    21300068: maleplayer1_34
+    21300070: maleplayer1_35
+    21300072: maleplayer1_36
+    21300074: maleplayer1_37
+    21300076: maleplayer1_38
+    21300078: maleplayer1_39
+    21300080: maleplayer1_40
+    21300082: maleplayer1_41
+    21300084: maleplayer1_42
+    21300086: maleplayer1_43
+    21300088: maleplayer1_44
+    21300090: maleplayer1_45
+    21300092: maleplayer1_46
+    21300094: maleplayer1_47
+    21300096: maleplayer1_48
+    21300098: maleplayer1_49
+    21300100: maleplayer1_50
+    21300102: maleplayer1_51
+    21300104: maleplayer1_52
+    21300106: maleplayer1_53
+    21300108: maleplayer1_54
+    21300110: maleplayer1_55
+    21300112: maleplayer1_56
+    21300114: maleplayer1_57
+    21300116: maleplayer1_58
+    21300118: maleplayer1_59
+    21300120: maleplayer1_60
+    21300122: maleplayer1_61
+    21300124: maleplayer1_62
+    21300126: maleplayer1_63
+    21300128: maleplayer1_64
+    21300130: maleplayer1_65
+    21300132: maleplayer1_66
+    21300134: maleplayer1_67
+    21300136: maleplayer1_68
+    21300138: maleplayer1_69
+    21300140: maleplayer1_70
+    21300142: maleplayer1_71
+    21300144: maleplayer1_72
+    21300146: maleplayer1_73
+    21300148: maleplayer1_74
+    21300150: maleplayer1_75
+    21300152: maleplayer1_76
+    21300154: maleplayer1_77
+    21300156: maleplayer1_78
+    21300158: maleplayer1_79
+    21300160: maleplayer1_80
+    21300162: maleplayer1_81
+    21300164: maleplayer1_82
+    21300166: maleplayer1_83
+    21300168: maleplayer1_84
+    21300170: maleplayer1_85
+    21300172: maleplayer1_86
+    21300174: maleplayer1_87
+    21300176: maleplayer1_88
+    21300178: maleplayer1_89
+    21300180: maleplayer1_90
+    21300182: maleplayer1_91
+    21300184: maleplayer1_92
+    21300186: maleplayer1_93
+    21300188: maleplayer1_94
+    21300190: maleplayer1_95
+    21300192: maleplayer1_96
+    21300194: maleplayer1_97
+    21300196: maleplayer1_98
+    21300198: maleplayer1_99
+    21300200: maleplayer1_100
+    21300202: maleplayer1_101
+    21300204: maleplayer1_102
+    21300206: maleplayer1_103
+    21300208: maleplayer1_104
+    21300210: maleplayer1_105
+    21300212: maleplayer1_106
+    21300214: maleplayer1_107
+    21300216: maleplayer1_108
+    21300218: maleplayer1_109
+    21300220: maleplayer1_110
+    21300222: maleplayer1_111
+    21300224: maleplayer1_112
+    21300226: maleplayer1_113
+    21300228: maleplayer1_114
+    21300230: maleplayer1_115
+    21300232: maleplayer1_116
+    21300234: maleplayer1_117
+    21300236: maleplayer1_118
+    21300238: maleplayer1_119
+    21300240: maleplayer1_120
+    21300242: maleplayer1_121
+    21300244: maleplayer1_122
+    21300246: maleplayer1_123
+    21300248: maleplayer1_124
+    21300250: maleplayer1_125
+    21300252: maleplayer1_126
+    21300254: maleplayer1_127
+    21300256: maleplayer1_128
+    21300258: maleplayer1_129
+    21300260: maleplayer1_130
+    21300262: maleplayer1_131
+    21300264: maleplayer1_132
+    21300266: maleplayer1_133
+    21300268: maleplayer1_134
+    21300270: maleplayer1_135
+    21300272: maleplayer1_136
+    21300274: maleplayer1_137
+    21300276: maleplayer1_138
+    21300278: maleplayer1_139
+    21300280: maleplayer1_140
+    21300282: maleplayer1_141
+    21300284: maleplayer1_142
+    21300286: maleplayer1_143
+    21300288: maleplayer1_144
+    21300290: maleplayer1_145
+    21300292: maleplayer1_146
+    21300294: maleplayer1_147
+    21300296: maleplayer1_148
+    21300298: maleplayer1_149
+    21300300: maleplayer1_150
+    21300302: maleplayer1_151
+    21300304: maleplayer1_152
+    21300306: maleplayer1_153
+    21300308: maleplayer1_154
+    21300310: maleplayer1_155
+    21300312: maleplayer1_156
+    21300314: maleplayer1_157
+    21300316: maleplayer1_158
+    21300318: maleplayer1_159
+    21300320: maleplayer1_160
+    21300322: maleplayer1_161
+    21300324: maleplayer1_162
+    21300326: maleplayer1_163
+    21300328: maleplayer1_164
+    21300330: maleplayer1_165
+    21300332: maleplayer1_166
+    21300334: maleplayer1_167
+    21300336: maleplayer1_168
+    21300338: maleplayer1_169
+    21300340: maleplayer1_170
+    21300342: maleplayer1_171
+    21300344: maleplayer1_172
+    21300346: maleplayer1_173
+    21300348: maleplayer1_174
+    21300350: maleplayer1_175
+    21300352: maleplayer1_176
+    21300354: maleplayer1_177
+    21300356: maleplayer1_178
+    21300358: maleplayer1_179
+    21300360: maleplayer1_180
+    21300362: maleplayer1_181
+    21300364: maleplayer1_182
+    21300366: maleplayer1_183
+    21300368: maleplayer1_184
+    21300370: maleplayer1_185
+    21300372: maleplayer1_186
+    21300374: maleplayer1_187
+    21300376: maleplayer1_188
+    21300378: maleplayer1_189
+    21300380: maleplayer1_190
+    21300382: maleplayer1_191
+    21300384: maleplayer1_192
+    21300386: maleplayer1_193
+    21300388: maleplayer1_194
+    21300390: maleplayer1_195
+    21300392: maleplayer1_196
+    21300394: maleplayer1_197
+    21300396: maleplayer1_198
+    21300398: maleplayer1_199
+    21300400: maleplayer1_200
+    21300402: maleplayer1_201
+    21300404: maleplayer1_202
+    21300406: maleplayer1_203
+    21300408: maleplayer1_204
+    21300410: maleplayer1_205
+    21300412: maleplayer1_206
+    21300414: maleplayer1_207
+    21300416: maleplayer1_208
+    21300418: maleplayer1_209
+    21300420: maleplayer1_210
+    21300422: maleplayer1_211
+    21300424: maleplayer1_212
+    21300426: maleplayer1_213
+    21300428: maleplayer1_214
+    21300430: maleplayer1_215
+    21300432: maleplayer1_216
+    21300434: maleplayer1_217
+    21300436: maleplayer1_218
+    21300438: maleplayer1_219
+    21300440: maleplayer1_220
+    21300442: maleplayer1_221
+    21300444: maleplayer1_222
+    21300446: maleplayer1_223
+    21300448: maleplayer1_224
+    21300450: maleplayer1_225
+    21300452: maleplayer1_226
+    21300454: maleplayer1_227
+    21300456: maleplayer1_228
+    21300458: maleplayer1_229
+    21300460: maleplayer1_230
+    21300462: maleplayer1_231
+    21300464: maleplayer1_232
+    21300466: maleplayer1_233
+    21300468: maleplayer1_234
+    21300470: maleplayer1_235
+    21300472: maleplayer1_236
+    21300474: maleplayer1_237
+    21300476: maleplayer1_238
+    21300478: maleplayer1_239
+    21300480: maleplayer1_240
+    21300482: maleplayer1_241
+    21300484: maleplayer1_242
+    21300486: maleplayer1_243
+    21300488: maleplayer1_244
+    21300490: maleplayer1_245
+    21300492: maleplayer1_246
+    21300494: maleplayer1_247
+    21300496: maleplayer1_248
+    21300498: maleplayer1_249
+    21300500: maleplayer1_250
+    21300502: maleplayer1_251
+    21300504: maleplayer1_252
+    21300506: maleplayer1_253
+    21300508: maleplayer1_254
+    21300510: maleplayer1_255
+    21300512: maleplayer1_256
+    21300514: maleplayer1_257
+    21300516: maleplayer1_258
+    21300518: maleplayer1_259
+    21300520: maleplayer1_260
+    21300522: maleplayer1_261
+    21300524: maleplayer1_262
+    21300526: maleplayer1_263
+    21300528: maleplayer1_264
+    21300530: maleplayer1_265
+    21300532: maleplayer1_266
+    21300534: maleplayer1_267
+    21300536: maleplayer1_268
+    21300538: maleplayer1_269
+    21300540: maleplayer1_270
+    21300542: maleplayer1_271
+    21300544: maleplayer1_272
+    21300546: maleplayer1_273
+    21300548: maleplayer1_274
+    21300550: maleplayer1_275
+    21300552: maleplayer1_276
+    21300554: maleplayer1_277
+    21300556: maleplayer1_278
+    21300558: maleplayer1_279
+    21300560: maleplayer1_280
+    21300562: maleplayer1_281
+    21300564: maleplayer1_282
+    21300566: maleplayer1_283
+    21300568: maleplayer1_284
+    21300570: maleplayer1_285
+    21300572: maleplayer1_286
+    21300574: maleplayer1_287
+    21300576: maleplayer1_288
+    21300578: maleplayer1_289
+    21300580: maleplayer1_290
+    21300582: maleplayer1_291
+    21300584: maleplayer1_292
+    21300586: maleplayer1_293
+    21300588: maleplayer1_294
+    21300590: maleplayer1_295
+    21300592: maleplayer1_296
+    21300594: maleplayer1_297
+    21300596: maleplayer1_298
+    21300598: maleplayer1_299
+    21300600: maleplayer1_300
+    21300602: maleplayer1_301
+    21300604: maleplayer1_302
+    21300606: maleplayer1_303
+    21300608: maleplayer1_304
+    21300610: maleplayer1_305
+    21300612: maleplayer1_306
+    21300614: maleplayer1_307
+    21300616: maleplayer1_308
+    21300618: maleplayer1_309
+    21300620: maleplayer1_310
+    21300622: maleplayer1_311
+    21300624: maleplayer1_312
+    21300626: maleplayer1_313
+    21300628: maleplayer1_314
+    21300630: maleplayer1_315
+    21300632: maleplayer1_316
+    21300634: maleplayer1_317
+    21300636: maleplayer1_318
+    21300638: maleplayer1_319
+    21300640: maleplayer1_320
+    21300642: maleplayer1_321
+    21300644: maleplayer1_322
+    21300646: maleplayer1_323
+    21300648: maleplayer1_324
+    21300650: maleplayer1_325
+    21300652: maleplayer1_326
+    21300654: maleplayer1_327
+    21300656: maleplayer1_328
+    21300658: maleplayer1_329
+    21300660: maleplayer1_330
+    21300662: maleplayer1_331
+    21300664: maleplayer1_332
+    21300666: maleplayer1_333
+    21300668: maleplayer1_334
+    21300670: maleplayer1_335
+    21300672: maleplayer1_336
+    21300674: maleplayer1_337
+    21300676: maleplayer1_338
+    21300678: maleplayer1_339
+    21300680: maleplayer1_340
+    21300682: maleplayer1_341
+    21300684: maleplayer1_342
+    21300686: maleplayer1_343
+    21300688: maleplayer1_344
+    21300690: maleplayer1_345
+    21300692: maleplayer1_346
+    21300694: maleplayer1_347
+    21300696: maleplayer1_348
+    21300698: maleplayer1_349
+    21300700: maleplayer1_350
+    21300702: maleplayer1_351
+    21300704: maleplayer1_352
+    21300706: maleplayer1_353
+    21300708: maleplayer1_354
+    21300710: maleplayer1_355
+    21300712: maleplayer1_356
+    21300714: maleplayer1_357
+    21300716: maleplayer1_358
+    21300718: maleplayer1_359
+    21300720: maleplayer1_360
+    21300722: maleplayer1_361
+    21300724: maleplayer1_362
+    21300726: maleplayer1_363
+    21300728: maleplayer1_364
+    21300730: maleplayer1_365
+    21300732: maleplayer1_366
+    21300734: maleplayer1_367
+    21300736: maleplayer1_368
+    21300738: maleplayer1_369
+    21300740: maleplayer1_370
+    21300742: maleplayer1_371
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: maleplayer1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_3
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_5
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_6
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_7
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_8
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_9
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_10
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_11
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_12
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_13
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_14
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_15
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_16
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_17
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_18
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_19
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_20
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_21
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_22
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_23
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_24
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 974
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_26
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_27
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_28
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_30
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_31
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_32
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_33
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_34
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_35
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_36
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_37
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_38
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_39
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_40
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_41
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_42
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_43
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_44
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_45
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_46
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_47
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_48
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_49
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_51
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_52
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_53
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_54
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_55
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_56
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_57
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_58
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_59
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_60
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_61
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_62
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_63
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_64
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_65
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_66
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_67
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_68
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_69
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_70
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_71
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_72
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_73
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_74
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 874
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_76
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_77
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_78
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_79
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_80
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_81
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_82
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_83
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_84
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_85
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_86
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_87
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_88
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_89
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_90
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_91
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_92
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_93
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_94
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_95
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_96
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_97
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_98
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_99
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 824
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_100
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_101
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_102
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_103
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_104
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_105
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_106
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_107
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_108
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_109
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_110
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_111
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_112
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_113
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_114
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_115
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_116
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_117
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_118
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_119
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_120
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_121
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_122
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_123
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_124
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 774
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_125
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_126
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_127
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_128
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_129
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_130
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_131
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_132
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_133
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_134
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_135
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_136
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_137
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_138
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_139
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_140
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_141
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_142
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_143
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_144
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_145
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_146
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_147
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_148
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_149
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 724
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_150
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_151
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_152
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_153
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_154
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_155
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_156
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_157
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_158
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_159
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_160
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_161
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_162
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_163
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_164
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_165
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_166
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_167
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_168
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_169
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_170
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_171
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_172
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_173
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_174
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 674
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_175
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_176
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_177
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_178
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_179
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_180
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_181
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_182
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_183
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_184
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_185
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_186
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_187
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_188
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_189
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_190
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_191
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_192
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_193
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_194
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_195
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_196
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_197
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_198
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_199
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 624
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_200
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_201
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_202
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_203
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_204
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_205
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_206
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_207
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_208
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_209
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_210
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_211
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_212
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_213
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_214
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_215
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_216
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_217
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_218
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_219
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_220
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_221
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_222
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_223
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_224
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 574
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_225
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_226
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_227
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_228
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_229
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_230
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_231
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_232
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_233
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_234
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_235
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_236
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_237
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_238
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_239
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_240
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_241
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_242
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_243
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_244
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_245
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_246
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_247
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_248
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_249
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 524
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_250
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_251
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_252
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_253
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_254
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_255
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_256
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_257
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_258
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_259
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_260
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_261
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_262
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_263
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_264
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_265
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_266
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_267
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_268
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_269
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_270
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_271
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_272
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_273
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_274
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 474
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_275
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_276
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_277
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_278
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_279
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_280
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_281
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_282
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_283
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_284
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_285
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_286
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_287
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_288
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_289
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_290
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_291
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_292
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_293
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_294
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_295
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_296
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_297
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_298
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_299
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 424
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_300
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_301
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_302
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_303
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_304
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_305
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_306
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_307
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_308
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_309
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_310
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_311
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_312
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_313
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_314
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_315
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_316
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_317
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_318
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_319
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_320
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_321
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_322
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_323
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_324
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 374
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_325
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_326
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_327
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_328
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_329
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_330
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_331
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_332
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_333
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_334
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_335
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_336
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_337
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_338
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_339
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_340
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_341
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_342
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_343
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_344
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_345
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_346
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_347
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_348
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_349
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 324
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_350
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_351
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_352
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_353
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_354
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_355
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_356
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_357
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_358
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_359
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_360
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_361
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_362
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_363
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_364
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_365
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_366
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_367
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_368
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_369
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_370
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: maleplayer1_371
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 274
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
