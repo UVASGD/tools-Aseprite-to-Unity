@@ -105,8 +105,6 @@ namespace ASE_to_Unity {
         private float OptionPopupSize;
         /// <summary>  </summary>
 
-        #endregion
-
         /// <summary> How the Animations should be imported </summary>
         public enum ImportType {
             DebuggingOutput = 0,
@@ -123,15 +121,17 @@ namespace ASE_to_Unity {
             ParticleEffect,
             Other
         }
+        #endregion
+
+        #region ---- INIT ----
 
         [MenuItem("Tools/Ase to Unity")]
         private static void OpenFromMenu() {
             EditorWindow window = EditorWindow.GetWindow(typeof(Anim_Import));
             window.name = "AE to Unity";
             window.minSize = new Vector2(400, 100);
+            window.titleContent = new GUIContent(window.name);
         }
-
-        #region ---- INIT ----
 
         /// <summary>
         /// initialize variables of first time activation
@@ -200,7 +200,11 @@ namespace ASE_to_Unity {
             string max = "";
             foreach (string s in options) 
                 max = s.Length > max.Length ? s : max;
-            OptionPopupSize = EditorStyles.label.CalcSize(new GUIContent(max)).x/4f;
+            try {
+                OptionPopupSize = EditorStyles.label.CalcSize(new GUIContent(max)).x / 4f;
+            } catch {
+                OptionPopupSize = 50;
+            }
         }
 
         /// <summary>
@@ -251,6 +255,7 @@ namespace ASE_to_Unity {
             SettingsGUI();
 
             GUILayout.EndScrollView();
+            //GUIUtility.ExitGUI();
         }
 
         /// <summary>
@@ -869,7 +874,8 @@ namespace ASE_to_Unity {
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.WindowStyle = ProcessWindowStyle.Hidden;
             startInfo.FileName = EditorPrefs.GetString(asepriteExeLoc) + "aseprite.exe";
-            startInfo.Arguments = "-b \"" + asePath + "\" --sheet \"" + spritesLoc + aseName + ".png\" --sheet-pack";
+            startInfo.Arguments = "-b \"" + asePath + "\" --sheet \"" + spritesLoc + aseName + ".png\"" + (
+                EditorPrefs.GetBool(isAnimation) ? " --sheet-pack" : "");
             process.StartInfo = startInfo;
             process.Start();
 
@@ -897,42 +903,45 @@ namespace ASE_to_Unity {
         /// <param name="ase"></param>
         private void ApplyTextureImportSettings(string spritePath, AseData ase) {
             string assetLocalPath = spritePath.Substring(spritePath.IndexOf("Assets/"));
-            
+            bool isAnim = EditorPrefs.GetBool(isAnimation);
+
             if (EditorPrefs.GetBool("outputToConsole"))
                 UnityEngine.Debug.Log("ALP: " + assetLocalPath);
             TextureImporter importer = (TextureImporter)AssetImporter.GetAtPath(assetLocalPath);
             importer.textureCompression = TextureImporterCompression.Uncompressed;
             importer.textureType = TextureImporterType.Sprite;
-            importer.spriteImportMode = SpriteImportMode.Multiple;
+            importer.spriteImportMode = isAnim ? SpriteImportMode.Multiple : SpriteImportMode.Single;
             importer.filterMode = FilterMode.Point;
             importer.mipmapEnabled = false;
             importer.SaveAndReimport();
 
-            Texture2D texture = new Texture2D(1, 1);
-            byte[] fileData = File.ReadAllBytes(spritePath);
-            texture = new Texture2D(2, 2);
-            texture.LoadImage(fileData);
-            Vector2 dim = ase.dim;
+            if (isAnim) {
+                Texture2D texture = new Texture2D(1, 1);
+                byte[] fileData = File.ReadAllBytes(spritePath);
+                texture = new Texture2D(2, 2);
+                texture.LoadImage(fileData);
+                Vector2 dim = ase.dim;
 
-            int colCount = texture.width / (int)dim.x;
-            int rowCount = texture.height / (int)dim.y;
+                int colCount = texture.width / (int)dim.x;
+                int rowCount = texture.height / (int)dim.y;
 
-            List<SpriteMetaData> metas = new List<SpriteMetaData>();
+                List<SpriteMetaData> metas = new List<SpriteMetaData>();
 
-            int i = 0;
-            for (int r = 0; r < rowCount; ++r) {
-                for (int c = 0; c < colCount; ++c) {
-                    if (i >= animDat.FrameCount) break;
-                    SpriteMetaData meta = new SpriteMetaData();
-                    meta.rect = new Rect(c * dim.x, texture.height - (r + 1) * dim.y, dim.x, dim.y);
-                    meta.name = ase.name + "_" + i;
-                    metas.Add(meta);
-                    i++;
+                int i = 0;
+                for (int r = 0; r < rowCount; ++r) {
+                    for (int c = 0; c < colCount; ++c) {
+                        if (i >= animDat.FrameCount) break;
+                        SpriteMetaData meta = new SpriteMetaData();
+                        meta.rect = new Rect(c * dim.x, texture.height - (r + 1) * dim.y, dim.x, dim.y);
+                        meta.name = ase.name + "_" + i;
+                        metas.Add(meta);
+                        i++;
+                    }
                 }
-            }
 
-            importer.spritesheet = metas.ToArray();
-            AssetDatabase.Refresh();
+                importer.spritesheet = metas.ToArray();
+                AssetDatabase.Refresh();
+            }
         }
         #endregion
 

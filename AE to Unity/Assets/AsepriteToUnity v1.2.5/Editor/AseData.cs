@@ -68,6 +68,12 @@ namespace ASE_to_Unity {
                     }
 
                 l0 = dynamicRate ? Anim_Import.GCD(Frames) : Frames[0]; // frame duration
+                if (l0 > 1000) {
+                    // Unity has a limitation that the samplerate must be an integer above 1
+                    dynamicRate = true;
+                    l0 = 10;
+                }
+
                 sampleRate = (int)Math.Round(1000f / l0);
 
                 // for each frame, place event at sample index
