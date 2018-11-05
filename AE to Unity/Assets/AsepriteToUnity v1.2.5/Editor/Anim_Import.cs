@@ -346,8 +346,10 @@ namespace ASE_to_Unity {
                     string temp = EditorUtility.OpenFolderPanel("Aseprite Install Location", EditorPrefs.GetString(asepriteExeLoc),
                         //(isWindows ? DEFAULT_WINDOWS_ASEPRITE_INSTALL_PATH : DEFAULT_MAC_ASEPRITE_INSTALL_PATH));
                         "");
-                    if (!String.IsNullOrEmpty(temp))
+                    if (!String.IsNullOrEmpty(temp)){
+						if(!temp.EndsWith("/")) temp += "/";
                         EditorPrefs.SetString(asepriteExeLoc, temp);
+					}
                 }
                 GUILayout.EndHorizontal();
                 GUILayout.Space(5);
